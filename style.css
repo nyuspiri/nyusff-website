@@ -584,25 +584,79 @@ body {
 
 /* Page Hero Section */
 .page-hero {
-    background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-black) 100%);
-    color: white;
-    padding: calc(70px + var(--spacing-2xl)) 0 var(--spacing-2xl);
-    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-grey1);
 }
 
 .page-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    color: var(--color-nyu-violet);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
 }
 
-.page-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    padding-right: var(--spacing-lg);
+}
+
+.hero-text .page-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-grey3);
     font-weight: 400;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-photo {
+    width: 100%;
+    max-width: 500px;
+    margin: 0;
+}
+
+.hero-photo .photo-placeholder {
+    height: 350px;
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .hero-text {
+        padding-right: 0;
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .hero-text .page-subtitle {
+        text-align: center;
+    }
+
+    .hero-photo .photo-placeholder {
+        height: 250px;
+    }
 }
 
 /* Content Sections */
