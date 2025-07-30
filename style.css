@@ -584,16 +584,9 @@ body {
 
 /* Page Hero Section */
 .page-hero {
-    padding: var(--spacing-2xl) 0;
-    background: var(--color-grey1);
-}
-
-.page-title {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--color-nyu-violet);
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
+    background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-black) 100%);
+    color: white;
+    padding: calc(70px + var(--spacing-2xl)) 0 var(--spacing-2xl);
 }
 
 .hero-content {
@@ -609,13 +602,25 @@ body {
     padding-right: var(--spacing-lg);
 }
 
+.page-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: white;
+    text-align: left;
+}
+
 .hero-text .page-subtitle {
-    font-size: 1.3rem;
-    color: var(--color-grey3);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
     line-height: 1.6;
     text-align: left;
     margin: 0;
+    color: white;
 }
 
 .hero-image {
@@ -639,6 +644,7 @@ body {
     .hero-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
+        text-align: center;
     }
 
     .hero-text {
@@ -648,6 +654,10 @@ body {
 
     .hero-image {
         order: 1;
+    }
+
+    .page-title {
+        text-align: center;
     }
 
     .hero-text .page-subtitle {
