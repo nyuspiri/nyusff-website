@@ -673,11 +673,218 @@ body {
     border-bottom: none;
 }
 
+/* Miami Film Festival Inspired About Page Styles */
+.centered-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-block {
+    margin: var(--spacing-2xl) 0;
+    padding: 0 var(--spacing-md);
+}
+
+.text-block h2 {
+    color: var(--color-nyu-violet);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.text-block h3 {
+    color: var(--color-black);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.text-block p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-grey3);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.centered-quote {
+    background: var(--color-grey1);
+    padding: var(--spacing-xl);
+    border-radius: 8px;
+    margin: var(--spacing-2xl) 0;
+    border-left: 4px solid var(--color-nyu-violet);
+}
+
+.centered-quote p {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.centered-quote cite {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-grey3);
+    font-style: normal;
+    text-align: center;
+}
+
+/* Photo Frame Styles */
+.photo-frame {
+    margin: var(--spacing-xl) auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: var(--color-grey2);
+}
+
+.photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-grey2) 0%, var(--color-grey1) 100%);
+    color: var(--color-grey3);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    border: 2px dashed #ccc;
+}
+
+.large-photo {
+    width: 100%;
+    max-width: 600px;
+}
+
+.large-photo .photo-placeholder {
+    height: 350px;
+}
+
+.medium-photo {
+    width: 100%;
+    max-width: 450px;
+}
+
+.medium-photo .photo-placeholder {
+    height: 250px;
+}
+
+.small-photo {
+    flex: 1;
+    min-width: 200px;
+}
+
+.small-photo .photo-placeholder {
+    height: 150px;
+}
+
+.speaker-photo {
+    flex: 1;
+    min-width: 180px;
+}
+
+.speaker-photo .photo-placeholder {
+    height: 200px;
+}
+
+/* Photo Grid Layouts */
+.photo-grid {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-2xl) 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo-grid.speakers {
+    margin: var(--spacing-xl) 0;
+}
+
+.photo-grid.final-grid {
+    margin: var(--spacing-2xl) 0;
+}
+
+/* Partners Section */
+.partners-section {
+    margin: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl);
+    background: var(--color-grey1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.partners-section h3 {
+    color: var(--color-nyu-violet);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.partner-logos {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo-placeholder {
+    background: white;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--color-grey3);
+    font-weight: 500;
+    min-width: 120px;
+    text-align: center;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .content-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+    }
+
+    .text-block {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .text-block h2 {
+        font-size: 2rem;
+    }
+
+    .text-block h3 {
+        font-size: 1.5rem;
+    }
+
+    .centered-quote {
+        margin: var(--spacing-xl) 0;
+        padding: var(--spacing-lg);
+    }
+
+    .centered-quote p {
+        font-size: 1.1rem;
+    }
+
+    .photo-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .partner-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .large-photo .photo-placeholder {
+        height: 250px;
+    }
+
+    .medium-photo .photo-placeholder {
+        height: 200px;
     }
 }
 
