@@ -9,7 +9,9 @@
 :root {
     --color-black: #000000;
     --color-white: #ffffff;
-    --color-accent: #ff4400;
+    --color-nyu-violet: #57068c;
+    --color-nyu-purple: #8900e1;
+    --color-accent: #57068c;
     --color-bg: #ffffff;
     --color-grey1: #f8f9fa;
     --color-grey2: #e9ecef;
@@ -96,7 +98,7 @@ body {
 
 .nav-link:hover {
     background-color: var(--color-grey1);
-    color: var(--color-accent);
+    color: var(--color-nyu-violet);
 }
 
 .nav-dropdown {
@@ -147,7 +149,7 @@ body {
 
 .dropdown-content a:hover {
     background-color: var(--color-grey1);
-    color: var(--color-accent);
+    color: var(--color-nyu-violet);
 }
 
 .mobile-menu-toggle {
@@ -245,7 +247,7 @@ body {
 }
 
 .cta-link:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-nyu-violet);
     transform: translateY(-2px);
 }
 
@@ -318,7 +320,7 @@ body {
 
 .news-date {
     font-size: 0.9rem;
-    color: var(--color-accent);
+    color: var(--color-nyu-violet);
     font-weight: 600;
     margin-bottom: var(--spacing-sm);
 }
@@ -329,10 +331,10 @@ body {
 }
 
 .news-link {
-    color: var(--color-accent);
+    color: var(--color-nyu-violet);
     font-weight: 600;
     text-decoration: none;
-    border-bottom: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-nyu-violet);
     transition: var(--transition-base);
 }
 
@@ -373,7 +375,7 @@ body {
 
 .footer-title .highlight {
     font-style: italic;
-    color: var(--color-accent);
+    color: var(--color-nyu-violet);
 }
 
 .footer-links {
@@ -404,7 +406,7 @@ body {
 }
 
 .footer-section a:hover {
-    color: var(--color-accent);
+    color: var(--color-nyu-violet);
 }
 
 .footer-newsletter {
@@ -433,7 +435,7 @@ body {
 
 .newsletter-button {
     padding: var(--spacing-sm) var(--spacing-lg);
-    background-color: var(--color-accent);
+    background-color: var(--color-nyu-violet);
     color: white;
     border: none;
     border-radius: 4px;
@@ -443,7 +445,7 @@ body {
 }
 
 .newsletter-button:hover {
-    background-color: #e03900;
+    background-color: var(--color-nyu-purple);
 }
 
 .footer-bottom {
@@ -548,6 +550,105 @@ body {
 
     .sponsor-logos {
         justify-content: center;
+    }
+}
+
+/* Page Hero Section */
+.page-hero {
+    background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-black) 100%);
+    color: white;
+    padding: calc(70px + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    text-align: center;
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.page-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* Content Sections */
+.content-section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+}
+
+.content-main h2 {
+    color: var(--color-nyu-violet);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.content-main h2:first-child {
+    margin-top: 0;
+}
+
+.content-main h3 {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.content-main ul {
+    margin-bottom: var(--spacing-md);
+}
+
+.content-main li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.info-box {
+    background: var(--color-grey1);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.info-box h3 {
+    color: var(--color-nyu-violet);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box li {
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.info-box li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 }
 
