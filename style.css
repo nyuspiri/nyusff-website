@@ -613,7 +613,7 @@ body {
 }
 
 .hero-text .page-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-size: clamp(0.715rem, 1.3vw, 0.975rem);
     font-weight: 400;
     opacity: 0.9;
     letter-spacing: 0.5px;
