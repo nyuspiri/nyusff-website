@@ -238,36 +238,33 @@ body {
     display: flex;
     align-items: center;
     white-space: nowrap;
-    animation: moveText 30s linear infinite;
+    animation: moveText 60s linear infinite;
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
+    width: max-content;
 }
 
 .text-carousel-item {
     display: inline-block;
-    padding: 0 4rem;
+    padding: 0 2rem;
     color: white;
     opacity: 0.8;
 }
 
 .text-carousel-item::after {
     content: "•";
-    margin-left: 4rem;
+    margin: 0 2rem;
     opacity: 0.5;
-}
-
-.text-carousel-item:last-child::after {
-    display: none;
 }
 
 @keyframes moveText {
     0% {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
