@@ -76,6 +76,21 @@ body {
     color: var(--color-black);
 }
 
+.logo a {
+    text-decoration: none;
+    display: block;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    transition: var(--transition-base);
+}
+
+.logo-image:hover {
+    opacity: 0.8;
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
@@ -254,9 +269,9 @@ body {
 }
 
 .text-carousel-item::after {
-    content: "•";
+    content: "■";
     margin: 0 1rem;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 @keyframes moveText {
