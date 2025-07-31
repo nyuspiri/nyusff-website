@@ -184,7 +184,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-lg);
+    padding: calc(70px + var(--spacing-lg)) 0 0;
 }
 
 .carousel-container {
@@ -217,6 +217,63 @@ body {
     opacity: 0.9;
     letter-spacing: 0.5px;
     margin-bottom: var(--spacing-lg);
+}
+
+/* Moving Text Carousel Belt */
+.text-carousel-belt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.text-carousel-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: moveText 30s linear infinite;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.text-carousel-item {
+    display: inline-block;
+    padding: 0 4rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.text-carousel-item::after {
+    content: "•";
+    margin-left: 4rem;
+    opacity: 0.5;
+}
+
+.text-carousel-item:last-child::after {
+    display: none;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause animation on hover */
+.text-carousel-belt:hover .text-carousel-track {
+    animation-play-state: paused;
 }
 
 /* Mission Section */
