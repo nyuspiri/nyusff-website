@@ -175,7 +175,7 @@ body {
 
 /* Homepage Carousel */
 .homepage-carousel {
-    height: 90vh;
+    min-height: 550px;
     max-width: 1500px;
     margin: 0 auto;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
@@ -184,7 +184,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(70px + var(--spacing-sm)) 0 var(--spacing-sm);
+    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-lg);
 }
 
 .carousel-container {
