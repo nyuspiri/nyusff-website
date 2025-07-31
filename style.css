@@ -615,8 +615,8 @@ body {
 .page-hero {
     background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-nyu-purple) 100%);
     color: white;
-    padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-xl);
-    min-height: 400px;
+    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-lg);
+    min-height: 550px;
     width: 100%;
     margin: 0;
     display: flex;
@@ -632,10 +632,10 @@ body {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-2xl);
     align-items: center;
     width: 100%;
-    min-height: 300px;
+    min-height: 400px;
 }
 
 .hero-text {
