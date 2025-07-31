@@ -175,7 +175,9 @@ body {
 
 /* Homepage Carousel */
 .homepage-carousel {
-    min-height: 50vh;
+    height: 650px;
+    max-width: 1500px;
+    margin: 0 auto;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: white;
     display: flex;
@@ -614,7 +616,9 @@ body {
     background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-black) 100%);
     color: white;
     padding: calc(70px + var(--spacing-xs)) 0 var(--spacing-xs);
-    min-height: 20vh;
+    height: 400px;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .hero-content {
