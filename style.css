@@ -75,21 +75,23 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-black);
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .logo a {
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .logo-image {
     height: 50px;
     width: auto;
     transition: var(--transition-base);
-}
-
-.logo-image:hover {
-    opacity: 0.8;
+    object-fit: cover; /* Ensure the image doesn't stretch */
 }
 
 .nav-menu {
@@ -1170,4 +1172,16 @@ centered-quote {
     text-decoration: none;
     border-bottom: 2px solid var(--color-nyu-purple); /*More prominent purple news link*/
     transition: var(--transition-base);
+}
+
+/* Raise the hero section content */
+.page-hero {
+    background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-nyu-purple) 100%);
+    color: white;
+    padding: calc(60px + var(--spacing-lg) - 60px) 0 var(--spacing-lg); /* Adjusted padding-top */
+    min-height: 550px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
