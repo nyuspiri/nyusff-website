@@ -1,3 +1,6 @@
+tags.
+
+<replit_final_file>
 /* Reset and base styles */
 * {
     margin: 0;
@@ -175,13 +178,14 @@ body {
 
 /* Homepage Carousel */
 .homepage-carousel {
-    min-height: 100vh;
+    min-height: 85vh;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-lg);
 }
 
 .carousel-container {
