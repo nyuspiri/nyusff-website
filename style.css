@@ -611,12 +611,12 @@ body {
     }
 }
 
-/* Page Hero Section - Miami Film Festival Style */
+/* Page Hero Section - NYU Sports Film Festival Style */
 .page-hero {
-    background: linear-gradient(135deg, #ff6b9d 0%, #f06292 100%);
-    color: black;
-    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-2xl);
-    min-height: 500px;
+    background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-nyu-purple) 100%);
+    color: white;
+    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-lg);
+    min-height: 350px;
     width: 100%;
     margin: 0;
     display: flex;
@@ -651,7 +651,7 @@ body {
     margin-bottom: var(--spacing-lg);
     letter-spacing: -0.02em;
     line-height: 0.9;
-    color: black;
+    color: white;
     text-align: left;
     text-transform: uppercase;
 }
@@ -663,7 +663,7 @@ body {
     line-height: 1.5;
     text-align: left;
     margin: 0;
-    color: black;
+    color: white;
     max-width: 500px;
 }
 
