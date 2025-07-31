@@ -58,7 +58,7 @@ body {
     border-bottom: 1px solid var(--color-border);
     z-index: 1000;
     transition: var(--transition-base);
-    height: 100px;
+    height: 60px;
 }
 
 .nav-container {
@@ -68,7 +68,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 60px;
 }
 
 .logo {
@@ -83,7 +83,7 @@ body {
 }
 
 .logo-image {
-    height: 80px;
+    height: 50px;
     width: auto;
     transition: var(--transition-base);
 }
@@ -186,7 +186,7 @@ body {
 
 /* Main Content */
 .main-content {
-    padding-top: 100px; /* Account for fixed header */
+    padding-top: 60px; /* Account for fixed header */
 }
 
 /* Homepage Carousel */
@@ -194,13 +194,13 @@ body {
     min-height: 550px;
     max-width: 1500px;
     margin: 0 auto;
-    background: #000000;
+    background: linear-gradient(135deg, #2d1b69 0%, #8b5cf6 25%, #a855f7 50%, #9333ea 75%, #7c3aed 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(100px + var(--spacing-lg)) 0 0;
+    padding: calc(60px + var(--spacing-lg)) 0 0;
 }
 
 .carousel-container {
@@ -233,6 +233,22 @@ body {
     opacity: 0.9;
     letter-spacing: 0.5px;
     margin-bottom: var(--spacing-lg);
+}
+
+.slide-video-frame {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: var(--spacing-lg) auto 0;
 }
 
 /* Moving Text Carousel Belt */
@@ -271,7 +287,7 @@ body {
 
 .text-carousel-item::after {
     content: "◆";
-    margin: 0 2rem;
+    margin: 0 1rem 0 2rem;
     opacity: 1;
     font-size: 0.8rem;
 }
@@ -686,7 +702,7 @@ body {
 .page-hero {
     background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-nyu-purple) 100%);
     color: white;
-    padding: calc(100px + var(--spacing-lg)) 0 var(--spacing-lg);
+    padding: calc(60px + var(--spacing-lg)) 0 var(--spacing-lg);
     min-height: 550px;
     width: 100%;
     margin: 0;
