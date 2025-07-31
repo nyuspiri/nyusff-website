@@ -611,16 +611,22 @@ body {
     }
 }
 
-/* Page Hero Section */
+/* Page Hero Section - Miami Film Festival Style */
 .page-hero {
-    background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-black) 100%);
-    color: white;
-    padding: calc(70px + var(--spacing-xs)) 0 var(--spacing-xs);
-    height: 400px;
-    max-width: 1500px;
-    margin: 0 auto;
+    background: linear-gradient(135deg, #ff6b9d 0%, #f06292 100%);
+    color: black;
+    padding: calc(70px + var(--spacing-lg)) 0 var(--spacing-2xl);
+    min-height: 500px;
+    width: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
+}
+
+.page-hero .container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 var(--spacing-lg);
 }
 
 .hero-content {
@@ -628,54 +634,61 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 100%;
+    width: 100%;
+    min-height: 400px;
 }
 
 .hero-text {
-    padding-right: var(--spacing-lg);
+    padding-right: var(--spacing-xl);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .page-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    margin-bottom: var(--spacing-lg);
     letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: white;
+    line-height: 0.9;
+    color: black;
     text-align: left;
+    text-transform: uppercase;
 }
 
 .hero-text .page-subtitle {
-    font-size: clamp(0.715rem, 1.3vw, 0.975rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 400;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-    line-height: 1.6;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
     text-align: left;
     margin: 0;
-    color: white;
+    color: black;
+    max-width: 500px;
 }
 
 .hero-image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
 }
 
 .hero-photo {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .hero-photo .photo-placeholder {
     height: 350px;
+    background: linear-gradient(135deg, #333 0%, #666 100%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* Responsive adjustments for hero section */
@@ -708,24 +721,30 @@ body {
     }
 }
 
-/* Content Sections */
+/* Content Sections - Miami Film Festival Style */
 .content-section {
-    padding: var(--spacing-lg) 0 var(--spacing-2xl);
+    padding: var(--spacing-2xl) 0;
+    background: white;
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
     align-items: start;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .content-main h2 {
-    color: var(--color-nyu-violet);
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    color: var(--color-black);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
 }
 
 .content-main h2:first-child {
@@ -734,10 +753,19 @@ body {
 
 .content-main h3 {
     color: var(--color-black);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    text-align: left;
+}
+
+.content-main p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
 }
 
 .content-main ul {
@@ -778,38 +806,40 @@ body {
 
 /* Miami Film Festival Inspired About Page Styles */
 .centered-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
+    padding: 0 var(--spacing-lg);
 }
 
 .text-block {
     margin: var(--spacing-2xl) 0;
-    padding: 0 var(--spacing-md);
+    padding: 0;
 }
 
 .text-block h2 {
-    color: var(--color-nyu-violet);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-lg);
+    color: var(--color-black);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: var(--spacing-xl);
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
 }
 
 .text-block h3 {
     color: var(--color-black);
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
     margin-bottom: var(--spacing-md);
-    text-align: center;
+    text-align: left;
 }
 
 .text-block p {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     line-height: 1.7;
-    color: var(--color-grey3);
-    margin-bottom: var(--spacing-md);
-    text-align: center;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
 }
 
 .centered-quote {
