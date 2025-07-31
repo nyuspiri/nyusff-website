@@ -612,8 +612,8 @@ body {
 .page-hero {
     background: linear-gradient(135deg, var(--color-nyu-violet) 0%, var(--color-black) 100%);
     color: white;
-    padding: calc(70px + var(--spacing-sm)) 0 var(--spacing-sm);
-    min-height: 50vh;
+    padding: calc(70px + var(--spacing-xs)) 0 var(--spacing-xs);
+    min-height: 25vh;
 }
 
 .hero-content {
