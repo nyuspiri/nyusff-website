@@ -55,7 +55,7 @@ body {
     right: 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: none;
     z-index: 1000;
     transition: var(--transition-base);
     height: 60px;
@@ -139,7 +139,7 @@ body {
     transform: translateY(-10px);
     transition: var(--transition-base);
     padding: var(--spacing-sm) 0;
-    border: 1px solid var(--color-border);
+    border: none;
 }
 
 .nav-dropdown:hover .dropdown-content {
@@ -240,7 +240,7 @@ body {
     max-width: 600px;
     aspect-ratio: 16/9;
     background: rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: none;
     border-radius: 0;
     display: flex;
     align-items: center;
@@ -258,9 +258,9 @@ body {
     left: 0;
     width: 100%;
     height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: #000000;
+    backdrop-filter: none;
+    border-top: none;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -329,7 +329,7 @@ body {
     background: white;
     padding: var(--spacing-xl);
     border-radius: 0;
-    border-left: 4px solid var(--color-nyu-violet);
+    border-left: none;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     margin-top: var(--spacing-xl);
 }
@@ -568,7 +568,7 @@ body {
 .newsletter-input {
     flex: 1;
     padding: var(--spacing-sm);
-    border: 1px solid #333;
+    border: none;
     border-radius: 0;
     background-color: #2a2a2a;
     color: white;
@@ -594,7 +594,7 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #333;
+    border-top: none;
     padding-top: var(--spacing-lg);
     display: flex;
     justify-content: space-between;
@@ -669,7 +669,7 @@ body {
         padding: var(--spacing-md);
         gap: var(--spacing-sm);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        border-top: 1px solid var(--color-border);
+        border-top: none;
     }
 
     .nav-menu.active {
@@ -884,7 +884,7 @@ body {
 
 .info-box li {
     padding: var(--spacing-xs) 0;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: none;
 }
 
 .info-box li:last-child {
@@ -934,7 +934,7 @@ body {
     padding: var(--spacing-xl);
     border-radius: 0;
     margin: var(--spacing-2xl) 0;
-    border-left: 4px solid var(--color-nyu-violet);
+    border-left: none;
 }
 
 .centered-quote p {
@@ -971,7 +971,7 @@ body {
     font-weight: 500;
     font-size: 1rem;
     text-align: center;
-    border: 2px dashed #ccc;
+    border: none;
 }
 
 .large-photo {
@@ -1052,7 +1052,7 @@ body {
 
 .logo-placeholder {
     background: white;
-    border: 2px dashed #ccc;
+    border: none;
     border-radius: 0;
     padding: var(--spacing-md) var(--spacing-lg);
     color: var(--color-grey3);
@@ -1130,7 +1130,7 @@ centered-quote {
 
 /*Increase the logo size by 2x*/
 .logo-image {
-    height: 100px; /*2x bigger than original 50px*/
+    height: 80px; /*Reduced by 20% from 100px*/
     width: auto;
     transition: var(--transition-base);
     object-fit: cover; /* Ensure the image doesn't stretch */
@@ -1148,7 +1148,7 @@ centered-quote {
     min-height: 550px;
     max-width: 1500px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.8); /* Opaque Black */
+    background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -1158,9 +1158,6 @@ centered-quote {
 }
 
 /*Add a little bit more purple lining in creative places*/
-.site-header {
-    border-bottom: 2px solid var(--color-nyu-purple); /*More prominent purple header border*/
-}
 
 .cta-link:hover {
     background-color: var(--color-nyu-purple); /*Use darker purple on hover*/
