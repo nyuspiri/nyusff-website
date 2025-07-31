@@ -175,7 +175,7 @@ body {
 
 /* Homepage Carousel */
 .homepage-carousel {
-    height: 650px;
+    height: 90vh;
     max-width: 1500px;
     margin: 0 auto;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
@@ -619,6 +619,8 @@ body {
     height: 400px;
     max-width: 1500px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
@@ -628,10 +630,14 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    height: 100%;
 }
 
 .hero-text {
     padding-right: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .page-title {
@@ -659,6 +665,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .hero-photo {
