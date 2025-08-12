@@ -252,28 +252,27 @@ body {
 .slide-cta-link {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #000000;
     color: white;
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 2px solid white;
+    border: 2px solid #000000;
     border-radius: 0;
     transition: var(--transition-base);
-    backdrop-filter: blur(10px);
 }
 
 .slide-cta-link:hover {
-    background-color: white;
-    color: var(--color-nyu-violet);
+    background-color: #333333;
+    color: white;
     transform: translateY(-2px);
 }
 
 .slide-image-frame {
     width: 100%;
     max-width: 600px;
-    aspect-ratio: 16/9;
+    height: calc((600px / 16) * 9 + 50px);
     background: rgba(0, 0, 0, 0.2);
     border: none;
     border-radius: 0;
