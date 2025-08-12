@@ -264,7 +264,7 @@ body {
 }
 
 .slide-cta-link:hover {
-    background-color: #333333;
+    background-color: var(--color-nyu-purple);
     color: white;
     transform: translateY(-2px);
 }
@@ -278,6 +278,7 @@ body {
     border-radius: 0;
     overflow: hidden;
     margin: var(--spacing-lg) auto 0;
+    transform: translateY(-35px);
 }
 
 .image-placeholder {
