@@ -270,8 +270,8 @@ body {
 }
 
 .slide-image-frame {
-    width: calc(100vw - 50%);
-    max-width: none;
+    width: 100%;
+    max-width: 600px;
     height: calc((600px / 16) * 9 + 50px);
     background: rgba(0, 0, 0, 0.2);
     border: none;
