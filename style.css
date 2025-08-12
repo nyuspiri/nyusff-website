@@ -465,15 +465,94 @@ body {
     font-family: var(--font-header); /* Apply Oswald font */
 }
 
-.film-list {
-    /* Placeholder for film list content */
-    min-height: 200px;
-    background-color: var(--color-grey1);
+.films-carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-nyu-violet) var(--color-grey2);
+}
+
+.films-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.films-carousel::-webkit-scrollbar-track {
+    background: var(--color-grey2);
+}
+
+.films-carousel::-webkit-scrollbar-thumb {
+    background: var(--color-nyu-violet);
+    border-radius: 4px;
+}
+
+.films-carousel-track {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) 0;
+    min-width: min-content;
+}
+
+.film-card {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+}
+
+.film-poster {
+    width: 200px;
+    height: 200px;
+    margin-bottom: var(--spacing-md);
     border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-base);
+}
+
+.film-card:hover .film-poster {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.poster-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-grey2) 0%, var(--color-grey1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-grey3);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.film-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0;
+    line-height: 1.4;
+    font-family: var(--font-header);
+}
+
+/* Responsive adjustments for film carousel */
+@media (max-width: 768px) {
+    .films-carousel-track {
+        gap: var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .film-card {
+        width: 150px;
+    }
+
+    .film-poster {
+        width: 150px;
+        height: 150px;
+    }
+
+    .film-title {
+        font-size: 0.9rem;
+    }
 }
 
 /* Latest News Section */
