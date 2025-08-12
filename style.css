@@ -1215,3 +1215,26 @@ body {
     display: flex;
     align-items: center;
 }
+
+/* Nested dropdown styles */
+.nav-dropdown.nested {
+    position: relative;
+    width: 100%;
+}
+
+.nav-dropdown.nested > a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-dropdown.nested .dropdown-content.nested {
+    top: 0;
+    left: 100%;
+    min-width: 180px;
+}
+
+.nav-dropdown.nested:hover > .dropdown-content.nested {
+    display: block;
+}
