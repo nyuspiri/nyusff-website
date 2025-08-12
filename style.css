@@ -966,7 +966,7 @@ body {
 
 .text-block h2 {
     color: var(--color-black);
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(1.875rem, 3vw, 2.625rem);
     font-weight: 900;
     margin-bottom: var(--spacing-md); /* Reduced from var(--spacing-xl) */
     text-align: center;
@@ -1185,7 +1185,8 @@ body {
 }
 
 .people-grid.committee,
-.people-grid.students {
+.people-grid.students,
+.people-grid.advisory {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
