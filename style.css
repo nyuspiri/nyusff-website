@@ -1272,13 +1272,15 @@ body {
 }
 
 .nav-dropdown.nested .dropdown-content.nested a {
-    padding: 0.5rem 0.3rem;
+    padding: 0.5rem 0.2rem;
     border-bottom: 1px solid #e9ecef;
     font-size: 0.75rem;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-dropdown.nested .dropdown-content.nested a:last-child {
