@@ -26,6 +26,7 @@
     --spacing-2xl: 4rem;
     --container-max-width: 1200px;
     --transition-base: 300ms ease;
+    --purple: var(--color-nyu-violet); /* Alias for easier use */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -1320,7 +1321,7 @@ body {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
-    
+
     .people-grid.leadership,
     .people-grid.committee,
     .people-grid.students {
@@ -1464,4 +1465,191 @@ body {
 .nav-dropdown.nested .dropdown-content.nested a:hover {
     background-color: #f3e8ff;
     color: var(--color-black);
+}
+
+/* Sponsorship Page Styles */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.benefit-item {
+    padding: 2rem;
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.benefit-item h3 {
+    color: var(--purple);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.sponsorship-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.tier-card {
+    border: 1px solid var(--purple);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tier-card.premium {
+    border: 2px solid var(--purple);
+    background: linear-gradient(135deg, #f8f4ff 0%, #ffffff 100%);
+}
+
+.tier-header {
+    background: var(--purple);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.tier-card.premium .tier-header {
+    background: linear-gradient(135deg, var(--purple) 0%, #8B5CF6 100%);
+}
+
+.tier-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+.tier-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.tier-benefits {
+    padding: 2rem;
+}
+
+.tier-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tier-benefits li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.tier-benefits li:last-child {
+    border-bottom: none;
+}
+
+.tier-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.current-sponsors {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.sponsor-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sponsor-logo {
+    padding: 2rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    border-color: var(--purple);
+    transform: translateY(-2px);
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--purple) 0%, #8B5CF6 100%);
+    color: white;
+    padding: 4rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--purple);
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--purple);
 }
