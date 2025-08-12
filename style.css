@@ -169,6 +169,9 @@ body {
     border-bottom: 1px solid #e9ecef;
     margin: 0;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dropdown-content a:last-child {
@@ -1273,6 +1276,9 @@ body {
     border-bottom: 1px solid #e9ecef;
     font-size: 0.75rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-dropdown.nested .dropdown-content.nested a:last-child {
