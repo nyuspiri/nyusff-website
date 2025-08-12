@@ -1230,11 +1230,33 @@ body {
 }
 
 .nav-dropdown.nested .dropdown-content.nested {
+    position: absolute;
     top: 0;
     left: 100%;
-    min-width: 180px;
+    min-width: 200px;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: var(--transition-base);
+    padding: var(--spacing-sm) 0;
+    border: none;
+    z-index: 1001;
 }
 
 .nav-dropdown.nested:hover > .dropdown-content.nested {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.nav-dropdown.nested .dropdown-arrow {
+    margin-left: 0.25rem;
+    font-size: 0.8rem;
+    transition: var(--transition-base);
+}
+
+.nav-dropdown.nested:hover .dropdown-arrow {
+    transform: rotate(90deg);
 }
