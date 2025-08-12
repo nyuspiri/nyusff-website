@@ -1,8 +1,19 @@
 
-// Film card flip functionality
+// Film card flip functionality - only one card flipped at a time
 function flipCard(filmCard) {
     const poster = filmCard.querySelector('.film-poster');
-    poster.classList.toggle('flipped');
+    const isCurrentlyFlipped = poster.classList.contains('flipped');
+    
+    // First, close all flipped cards
+    const allFlippedCards = document.querySelectorAll('.film-poster.flipped');
+    allFlippedCards.forEach(card => {
+        card.classList.remove('flipped');
+    });
+    
+    // If the clicked card wasn't already flipped, flip it
+    if (!isCurrentlyFlipped) {
+        poster.classList.add('flipped');
+    }
 }
 
 // Close flipped cards when clicking outside
