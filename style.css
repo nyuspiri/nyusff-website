@@ -1285,9 +1285,9 @@ body {
 
 .text-block h2 {
     color: var(--color-black);
-    font-size: clamp(1.875rem, 3vw, 2.625rem);
+    font-size: clamp(2.34375rem, 3.75vw, 3.28125rem);
     font-weight: 900;
-    margin-bottom: var(--spacing-md); /* Reduced from var(--spacing-xl) */
+    margin: calc(var(--spacing-md) - 25px) 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: -0.01em;
