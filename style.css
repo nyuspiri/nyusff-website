@@ -1555,7 +1555,7 @@ body {
     background: var(--color-grey1);
     padding: var(--spacing-xl);
     border-radius: 0;
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-lg) 0;
     text-align: center;
     border: 1px solid var(--color-border);
 }
@@ -1588,10 +1588,10 @@ body {
     box-shadow: 0 6px 16px rgba(87, 6, 140, 0.25);
 }
 
-/* Make bottom FilmFreeway button 2x bigger */
+/* Bottom FilmFreeway button - normal size */
 .cta-section img {
-    width: 526px;
-    height: 204px;
+    width: 263px;
+    height: 102px;
     max-width: 100%;
 }
 
