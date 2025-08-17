@@ -2047,3 +2047,51 @@ body {
     background: white;
     color: var(--purple);
 }
+
+/* Brand Activation Styles */
+.activation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.activation-category {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.activation-category h3 {
+    color: var(--purple);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--purple);
+    padding-bottom: 0.5rem;
+}
+
+.activation-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activation-category li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.activation-category li:last-child {
+    border-bottom: none;
+}
+
+.activation-category li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--purple);
+    font-size: 0.8rem;
+}
