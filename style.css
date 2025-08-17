@@ -921,8 +921,8 @@ body {
 
 /* Thin hero variant for submission page */
 .page-hero.thin-hero {
-    min-height: 200px;
-    padding: calc(60px + var(--spacing-md)) 0 var(--spacing-md);
+    min-height: 280px;
+    padding: calc(60px + var(--spacing-lg)) 0 var(--spacing-lg);
 }
 
 .page-hero .container {
@@ -1090,8 +1090,8 @@ body {
     }
 
     .page-hero.thin-hero {
-        min-height: 180px;
-        padding: calc(60px + var(--spacing-sm)) 0 var(--spacing-sm);
+        min-height: 220px;
+        padding: calc(60px + var(--spacing-md)) 0 var(--spacing-md);
     }
 }
 
