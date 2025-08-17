@@ -1504,7 +1504,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
     }
-    
+
     .partner-logo-box {
         padding: var(--spacing-xs);
     }
@@ -1604,7 +1604,7 @@ body {
 /* Advisory Board Styles */
 .advisory-board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
     gap: var(--spacing-xl);
     margin: var(--spacing-2xl) 0;
 }
@@ -1642,6 +1642,14 @@ body {
     color: var(--color-nyu-violet);
     position: absolute;
     left: 0;
+}
+
+.advisor-item li .name {
+    color: var(--color-black); /* Names in black */
+}
+
+.advisor-item li .company {
+    color: var(--color-nyu-purple); /* Companies in purple */
 }
 
 /* CTA Section */
