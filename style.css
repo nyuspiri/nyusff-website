@@ -919,6 +919,12 @@ body {
     align-items: center;
 }
 
+/* Thin hero variant for submission page */
+.page-hero.thin-hero {
+    min-height: 200px;
+    padding: calc(60px + var(--spacing-md)) 0 var(--spacing-md);
+}
+
 .page-hero .container {
     max-width: 1400px;
     width: 100%;
@@ -932,6 +938,51 @@ body {
     align-items: center;
     width: 100%;
     min-height: 400px;
+}
+
+/* Hero content with button layout for submission page */
+.hero-content-with-button {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-button-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.big-submit-button {
+    display: inline-block;
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #000000;
+    border-radius: 0;
+    transition: var(--transition-base);
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.big-submit-button:hover {
+    background-color: white;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text {
@@ -1015,6 +1066,32 @@ body {
 
     .hero-photo .photo-placeholder {
         height: 250px;
+    }
+
+    /* Responsive adjustments for submission page hero */
+    .hero-content-with-button {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .hero-text-content {
+        order: 1;
+    }
+
+    .hero-button-section {
+        order: 2;
+        justify-content: center;
+    }
+
+    .big-submit-button {
+        font-size: 1rem;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .page-hero.thin-hero {
+        min-height: 180px;
+        padding: calc(60px + var(--spacing-sm)) 0 var(--spacing-sm);
     }
 }
 
