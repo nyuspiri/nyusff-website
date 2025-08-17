@@ -1531,9 +1531,13 @@ body {
 }
 
 .people-grid.committee,
-.people-grid.students,
-.people-grid.advisory {
+.people-grid.students {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.people-grid.advisory {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
 }
 
 .person-card {
@@ -1713,7 +1717,8 @@ body {
 
     .people-grid.leadership,
     .people-grid.committee,
-    .people-grid.students {
+    .people-grid.students,
+    .people-grid.advisory {
         grid-template-columns: 1fr;
     }
 
