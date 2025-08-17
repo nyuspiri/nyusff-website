@@ -1420,7 +1420,7 @@ body {
 
 .partners-section h3 {
     color: var(--color-nyu-violet);
-    font-size: 1.8rem;
+    font-size: 3.6rem;
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
     font-family: var(--font-header); /* Apply Oswald font */
@@ -1431,7 +1431,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
     justify-content: center;
-    max-width: 600px;
+    max-width: 690px;
     margin: 0 auto;
 }
 
@@ -1445,6 +1445,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transform: scale(1.15);
 }
 
 .logo-placeholder {
