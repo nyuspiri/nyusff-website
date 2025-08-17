@@ -1009,6 +1009,11 @@ body {
     font-family: var(--font-header); /* Apply Oswald font */
 }
 
+/* Larger title for submission page */
+.page-hero.thin-hero .page-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
 .hero-text .page-subtitle {
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 400;
@@ -1018,6 +1023,11 @@ body {
     margin: 0;
     color: white;
     max-width: 500px;
+}
+
+/* Larger subtitle for submission page */
+.page-hero.thin-hero .page-subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
 .hero-image {
@@ -1086,6 +1096,26 @@ body {
     .page-hero.thin-hero {
         min-height: 220px;
         padding: calc(60px + var(--spacing-md)) 0 var(--spacing-md);
+    }
+
+    /* Responsive adjustments for larger submission content */
+    .page-hero.thin-hero .page-title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    .page-hero.thin-hero .page-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.4rem);
+    }
+
+    /* Responsive FilmFreeway button sizes */
+    .cta-section img {
+        width: 400px;
+        height: 156px;
+    }
+
+    .hero-button-section img,
+    .cta-section img {
+        border-radius: 6px;
     }
 }
 
@@ -1534,6 +1564,35 @@ body {
     font-size: 1.1rem;
     color: var(--color-black);
     margin: 0;
+}
+
+/* FilmFreeway button effects */
+.hero-button-section img,
+.cta-section img {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(87, 6, 140, 0.2);
+}
+
+.hero-button-section img:hover,
+.cta-section img:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(87, 6, 140, 0.3);
+    filter: brightness(1.1);
+}
+
+.hero-button-section img:active,
+.cta-section img:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(87, 6, 140, 0.25);
+}
+
+/* Make bottom FilmFreeway button 2x bigger */
+.cta-section img {
+    width: 526px;
+    height: 204px;
+    max-width: 100%;
 }
 
 /* Responsive adjustments for people page */
