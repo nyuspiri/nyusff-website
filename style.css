@@ -1588,13 +1588,6 @@ body {
     box-shadow: 0 6px 16px rgba(87, 6, 140, 0.25);
 }
 
-/* Header FilmFreeway button - 2x bigger */
-.hero-button-section img {
-    width: 526px;
-    height: 98px;
-    max-width: 100%;
-}
-
 /* Bottom FilmFreeway button - normal size */
 .cta-section img {
     width: 263px;
