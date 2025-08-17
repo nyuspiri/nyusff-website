@@ -935,20 +935,20 @@ body {
     height: 200px;
     top: 50%;
     transform: translateY(-50%);
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
 .hero-bleed-photo.left-bleed {
-    left: -150px;
-    transform: translateY(-50%) rotate(-3deg);
+    left: -75px;
+    transform: translateY(-50%) rotate(0deg);
 }
 
 .hero-bleed-photo.right-bleed {
-    right: -150px;
-    transform: translateY(-50%) rotate(3deg);
+    right: -75px;
+    transform: translateY(-50%) rotate(0deg);
 }
 
 .hero-bleed-photo .photo-placeholder {
@@ -1143,13 +1143,13 @@ body {
     }
 
     .hero-bleed-photo.left-bleed {
-        left: -90px;
-        transform: translateY(-50%) rotate(-2deg);
+        left: -15px;
+        transform: translateY(-50%) rotate(0deg);
     }
 
     .hero-bleed-photo.right-bleed {
-        right: -90px;
-        transform: translateY(-50%) rotate(2deg);
+        right: -15px;
+        transform: translateY(-50%) rotate(0deg);
     }
 
     .hero-bleed-photo .photo-placeholder {
