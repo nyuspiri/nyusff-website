@@ -931,8 +931,8 @@ body {
 /* Bleeding photo frames for submission page */
 .hero-bleed-photo {
     position: absolute;
-    width: 200px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 8px;
@@ -942,13 +942,13 @@ body {
 }
 
 .hero-bleed-photo.left-bleed {
-    left: -100px;
-    transform: translateY(-50%) rotate(-15deg);
+    left: -150px;
+    transform: translateY(-50%) rotate(-3deg);
 }
 
 .hero-bleed-photo.right-bleed {
-    right: -100px;
-    transform: translateY(-50%) rotate(15deg);
+    right: -150px;
+    transform: translateY(-50%) rotate(3deg);
 }
 
 .hero-bleed-photo .photo-placeholder {
@@ -1138,18 +1138,18 @@ body {
 
     /* Adjust bleeding photo frames on mobile */
     .hero-bleed-photo {
-        width: 120px;
-        height: 90px;
+        width: 180px;
+        height: 120px;
     }
 
     .hero-bleed-photo.left-bleed {
-        left: -60px;
-        transform: translateY(-50%) rotate(-10deg);
+        left: -90px;
+        transform: translateY(-50%) rotate(-2deg);
     }
 
     .hero-bleed-photo.right-bleed {
-        right: -60px;
-        transform: translateY(-50%) rotate(10deg);
+        right: -90px;
+        transform: translateY(-50%) rotate(2deg);
     }
 
     .hero-bleed-photo .photo-placeholder {
