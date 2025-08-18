@@ -1871,6 +1871,15 @@ body {
     margin-right: auto !important;
 }
 
+/* Center all body paragraphs on sponsorship page */
+.sponsorship-page .text-block p,
+.sponsorship-page .benefit-item p,
+.sponsorship-page .activation-category p,
+.sponsorship-page .tier-benefits p,
+.sponsorship-page .current-sponsors p {
+    text-align: center;
+}
+
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2063,6 +2072,8 @@ body {
     margin-right: auto;
     position: relative;
     z-index: 2;
+    color: white;
+    font-weight: 500;
 }
 
 .cta-buttons {
