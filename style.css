@@ -1880,25 +1880,18 @@ body {
     text-align: center;
 }
 
-/* Prevent text wrapping for longer sentences on sponsorship page */
+/* Allow natural text wrapping for sponsorship page content */
 .sponsorship-page .centered-intro-text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    max-width: 100%;
 }
 
-/* Alternative approach for specific cases - allow controlled line breaks */
+/* Natural line breaks with proper hyphenation */
 .sponsorship-page .text-block p,
 .sponsorship-page .current-sponsors p {
-    hyphens: none;
-    word-break: keep-all;
-}
-
-/* Responsive adjustment - allow wrapping on smaller screens */
-@media (max-width: 768px) {
-    .sponsorship-page .centered-intro-text {
-        white-space: normal;
-    }
+    hyphens: auto;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .benefits-grid {
