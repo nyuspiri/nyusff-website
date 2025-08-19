@@ -275,7 +275,7 @@ body {
 }
 
 .slide-cta-link:hover {
-    background-color: var(--color-nyu-purple);
+    background-color: #4c1d95;
     color: white;
     transform: translateY(-2px);
 }
