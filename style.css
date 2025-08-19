@@ -1017,11 +1017,19 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero-bleed-photo img {
+.hero-bleed-photo.left-bleed img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: calc(50% + 40px) center;
+    display: block;
+}
+
+.hero-bleed-photo.right-bleed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: calc(50% - 40px) center;
     display: block;
 }
 
