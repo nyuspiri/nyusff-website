@@ -581,17 +581,17 @@ body {
 }
 
 .film-card[data-logline*="Quadriplegic surfer"] .poster-front img {
-    object-position: center calc(50% - 45px);
+    object-position: center calc(50% - 60px);
 }
 
 .film-card[data-logline*="Thirteen-year-old Andrew Chong"] .poster-front img {
     object-fit: cover;
-    object-position: center calc(50% - 15px);
+    object-position: center calc(50% - 25px);
     transform: scale(1.1);
 }
 
 .film-card[data-logline*="French chess player Marie"] .poster-front img {
-    object-position: center calc(50% - 25px);
+    object-position: center calc(50% - 32px);
 }
 
 .poster-front {
