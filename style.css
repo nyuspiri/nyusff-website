@@ -566,6 +566,22 @@ body {
     object-position: center;
     display: block;
 }
+
+/* Specific positioning for individual film posters */
+.film-card[data-logline*="Adrian Davis"] .poster-front img {
+    object-position: calc(50% - 10px) center;
+}
+
+.film-card[data-logline*="Professor David Hollander"] .poster-front img {
+    object-position: center calc(50% - 25px);
+}
+
+.film-card[data-logline*="four combat disciplines"] .poster-front img {
+    object-position: center calc(50% + 25px);
+}
+
+.film-card[data-logline*="Quadriplegic surfer"] .poster-front img {
+    object-position: center calc(50% - 35px);
 }
 
 .poster-front {
@@ -574,7 +590,7 @@ body {
 
 .poster-back {
     transform: rotateY(180deg);
-    background: var(--color-nyu-violet);
+    background: #2d1b69;
     display: flex;
     align-items: center;
     justify-content: center;
