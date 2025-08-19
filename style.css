@@ -305,6 +305,27 @@ body {
     font-weight: 500;
 }
 
+.slide-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* Moving Text Carousel Belt */
 .text-carousel-belt {
     position: absolute;
