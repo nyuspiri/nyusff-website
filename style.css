@@ -317,6 +317,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 .photo-frame img {
@@ -324,6 +325,18 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
+}
+
+/* Ensure all photo frames have no gaps */
+.photo-frame {
+    line-height: 0;
+    font-size: 0;
+}
+
+.photo-placeholder {
+    line-height: 0;
+    font-size: 0;
 }
 
 /* Moving Text Carousel Belt */
