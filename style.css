@@ -1000,7 +1000,7 @@ body {
 }
 
 .hero-bleed-photo.right-bleed {
-    right: -55px;
+    right: -75px;
     transform: translateY(-50%) rotate(0deg);
 }
 
