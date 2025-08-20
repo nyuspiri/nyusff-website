@@ -713,7 +713,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(87, 6, 140, 0.15);
     transition: var(--transition-base);
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -724,7 +724,7 @@ body {
 }
 
 .news-image {
-    height: 50%;
+    height: 45%;
     background-color: #d1d5db;
     display: flex;
     align-items: center;
@@ -740,7 +740,7 @@ body {
 }
 
 .news-content {
-    height: 50%;
+    height: 55%;
     padding: var(--spacing-lg);
     background-color: white;
     display: flex;
