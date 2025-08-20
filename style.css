@@ -750,16 +750,27 @@ body {
     line-height: 1.6;
 }
 
-.news-link {
-    color: var(--color-nyu-purple);
-    font-weight: 600;
+.news-item-link {
+    display: block;
     text-decoration: none;
-    border-bottom: 2px solid var(--color-nyu-purple); /*More prominent purple news link*/
-    transition: var(--transition-base);
+    color: inherit;
+    width: 100%;
+    height: 100%;
 }
 
-.news-link:hover {
-    opacity: 0.8;
+.news-item-link:hover {
+    text-decoration: none;
+}
+
+.news-item-link .news-title {
+    color: var(--color-black);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.news-item-link:hover .news-title {
+    color: var(--color-nyu-purple);
+    text-decoration: none;
 }
 
 /* Footer */
