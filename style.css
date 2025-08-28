@@ -983,6 +983,8 @@ body {
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         border-top: none;
         z-index: 1001;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -994,8 +996,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1rem;
-        padding: var(--spacing-md);
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+        white-space: nowrap;
     }
 
     .dropdown-content {
@@ -1016,8 +1019,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.9rem;
-        padding: var(--spacing-md) var(--spacing-sm);
+        font-size: 0.8rem;
+        padding: var(--spacing-sm);
+        white-space: nowrap;
     }
 
     /* Nested dropdowns on mobile */
@@ -1028,13 +1032,25 @@ body {
         background: #e9ecef;
     }
 
+    .nav-dropdown.nested .dropdown-content.nested a {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+        gap: var(--spacing-lg);
     }
 
     .sponsor-logos {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .sponsor-logos img {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -1650,10 +1666,12 @@ body {
     .partner-logos {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
+        max-width: 400px;
     }
 
     .partner-logo-box {
         padding: var(--spacing-xs);
+        min-height: 80px;
     }
 
     .large-photo .photo-placeholder {
@@ -1877,6 +1895,40 @@ body {
     max-width: 100%;
 }
 
+/* Mobile-specific button sizing */
+@media (max-width: 768px) {
+    .hero-button-section img {
+        width: min(300px, 90vw);
+        height: auto;
+    }
+    
+    .cta-section img {
+        width: min(200px, 80vw);
+        height: auto;
+    }
+    
+    .big-submit-button {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) var(--spacing-lg);
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-button-section img {
+        width: min(250px, 85vw);
+    }
+    
+    .cta-section img {
+        width: min(180px, 75vw);
+    }
+    
+    .big-submit-button {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+}
+
 /* Responsive adjustments for people page */
 @media (max-width: 768px) {
     .people-grid {
@@ -1895,6 +1947,10 @@ body {
         height: 200px;
     }
 
+    .person-photo img {
+        height: 200px;
+    }
+
     .advisory-board {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -1907,6 +1963,42 @@ body {
     .cta-section {
         padding: var(--spacing-lg);
         margin: var(--spacing-xl) 0;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .page-hero .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .partner-logos {
+        grid-template-columns: 1fr;
+        max-width: 200px;
+    }
+    
+    .person-info {
+        padding: var(--spacing-md);
+    }
+    
+    .text-block h2 {
+        font-size: 1.75rem;
+    }
+    
+    .slide-title {
+        font-size: 2rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
     }
 }
 
