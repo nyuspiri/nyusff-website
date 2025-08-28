@@ -1687,6 +1687,11 @@ body {
     gap: var(--spacing-lg);
 }
 
+.people-grid.advisory .person-photo .photo-placeholder,
+.people-grid.advisory .person-photo img {
+    height: 180px;
+}
+
 .person-card {
     background: white;
     border-radius: 0;
