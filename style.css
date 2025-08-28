@@ -1692,6 +1692,14 @@ body {
     height: 180px;
 }
 
+/* Adjust positioning for specific people to show top of image */
+.person-photo img[alt="Linsey Bostwick"],
+.person-photo img[alt="John Tintori"], 
+.person-photo img[alt="Ronnie Kay"],
+.person-photo img[alt="Peter Carellini"] {
+    object-position: center top;
+}
+
 .person-card {
     background: white;
     border-radius: 0;
