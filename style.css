@@ -35,7 +35,7 @@
     .films-carousel-track {
         justify-content: center;
     }
-    
+
     .partner-logos {
         max-width: 1000px;
     }
@@ -1041,7 +1041,7 @@ input:focus-visible {
 }
 
 .footer-bottom {
-    border-top: none;
+    border-top: 1px solid #2a2a2a; /* Added a separator */
     padding-top: var(--spacing-lg);
     display: flex;
     justify-content: space-between;
@@ -1055,6 +1055,27 @@ input:focus-visible {
     gap: var(--spacing-md);
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+.footer-legal-bar {
+    background-color: var(--color-black); /* Black bar */
+    color: var(--color-white); /* White text */
+    padding: 10px 0; /* Vertical padding */
+    height: 50px; /* 50px tall */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    width: 100%; /* Full width */
+    position: relative; /* Needed for potential absolute positioning inside */
+    margin-left: calc(-1 * var(--spacing-xs)); /* Adjust for container padding */
+    margin-right: calc(-1 * var(--spacing-xs)); /* Adjust for container padding */
+}
+
+.footer-legal-bar span {
+    color: var(--color-white); /* Ensure text is white */
+    font-size: 0.9rem; /* Adjust font size as needed */
+    line-height: 1.5; /* Ensure line height for readability */
+    text-align: center; /* Center text within the span */
 }
 
 .footer-legal a {
@@ -1195,9 +1216,18 @@ input:focus-visible {
         text-align: center;
         gap: var(--spacing-lg);
     }
-    
+
     .player-logo {
         height: 120px;
+    }
+
+    .footer-legal-bar {
+        margin-left: calc(-1 * var(--spacing-xs));
+        margin-right: calc(-1 * var(--spacing-xs));
+    }
+
+    .footer-legal {
+        gap: var(--spacing-md);
     }
 }
 
@@ -2073,12 +2103,12 @@ input:focus-visible {
         width: min(300px, 90vw);
         height: auto;
     }
-    
+
     .cta-section img {
         width: min(200px, 80vw);
         height: auto;
     }
-    
+
     .big-submit-button {
         font-size: 0.9rem;
         padding: var(--spacing-sm) var(--spacing-lg);
@@ -2090,11 +2120,11 @@ input:focus-visible {
     .hero-button-section img {
         width: min(250px, 85vw);
     }
-    
+
     .cta-section img {
         width: min(180px, 75vw);
     }
-    
+
     .big-submit-button {
         font-size: 0.8rem;
         padding: var(--spacing-xs) var(--spacing-md);
@@ -2143,32 +2173,32 @@ input:focus-visible {
     .container {
         padding: 0 var(--spacing-xs);
     }
-    
+
     .nav-container {
         padding: 0 var(--spacing-xs);
     }
-    
+
     .page-hero .container {
         padding: 0 var(--spacing-sm);
     }
-    
+
     .partner-logos {
         grid-template-columns: 1fr;
         max-width: 200px;
     }
-    
+
     .person-info {
         padding: var(--spacing-md);
     }
-    
+
     .text-block h2 {
         font-size: 1.75rem;
     }
-    
+
     .slide-title {
         font-size: 2rem;
     }
-    
+
     .page-title {
         font-size: 1.8rem;
     }
