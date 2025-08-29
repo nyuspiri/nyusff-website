@@ -1040,46 +1040,32 @@ input:focus-visible {
     background-color: var(--color-nyu-purple);
 }
 
-.footer-bottom {
-    border-top: 1px solid #2a2a2a; /* Added a separator */
-    padding-top: var(--spacing-lg);
+.footer-legal-bar {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 15px 0;
+    height: 50px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: var(--spacing-lg);
 }
 
 .footer-legal {
     display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.footer-legal-bar {
-    background-color: var(--color-black); /* Black bar */
-    color: var(--color-white); /* White text */
-    padding: 10px 0; /* Vertical padding */
-    height: 50px; /* 50px tall */
-    display: flex;
+    gap: var(--spacing-lg);
     align-items: center;
-    justify-content: center; /* Center content horizontally */
-    width: 100%; /* Full width */
-    position: relative; /* Needed for potential absolute positioning inside */
-    margin-left: calc(-1 * var(--spacing-xs)); /* Adjust for container padding */
-    margin-right: calc(-1 * var(--spacing-xs)); /* Adjust for container padding */
-}
-
-.footer-legal-bar span {
-    color: var(--color-white); /* Ensure text is white */
-    font-size: 0.9rem; /* Adjust font size as needed */
-    line-height: 1.5; /* Ensure line height for readability */
-    text-align: center; /* Center text within the span */
+    justify-content: center;
 }
 
 .footer-legal a {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition-base);
@@ -1087,23 +1073,6 @@ input:focus-visible {
 
 .footer-legal a:hover {
     color: white;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-}
-
-.player-logo {
-    height: 185px;
-    width: auto;
-    object-fit: contain;
-    transition: var(--transition-base);
-}
-
-.player-logo:hover {
-    transform: scale(1.05);
 }
 
 /* Responsive Design */
