@@ -552,7 +552,7 @@ input:focus-visible {
 
 .cta-link {
     display: inline-block;
-    padding: var(--spacing-lg) var(--spacing-2xl);
+    padding: var(--spacing-md) var(--spacing-lg);
     background-color: var(--color-black);
     color: white;
     text-decoration: none;
@@ -562,7 +562,7 @@ input:focus-visible {
     letter-spacing: 0.8px;
     border-radius: 0;
     transition: var(--transition-base);
-    min-height: 60px;
+    min-height: 54px;
     display: flex;
     align-items: center;
     justify-content: center;
