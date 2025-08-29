@@ -1291,6 +1291,46 @@ input:focus-visible {
     min-height: 400px;
 }
 
+/* Centered hero layout for about page */
+.page-hero.about-hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-hero.about-hero .hero-text {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hero.about-hero .page-title {
+    text-align: center;
+}
+
+.page-hero.about-hero .hero-text .page-subtitle {
+    text-align: center;
+    max-width: 700px;
+}
+
+.page-hero.about-hero .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.page-hero.about-hero .hero-photo {
+    max-width: 500px;
+}
+
 /* Hero content with button layout for submission page */
 .hero-content-with-button {
     display: flex;
