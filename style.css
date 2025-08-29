@@ -948,7 +948,7 @@ input:focus-visible {
 .footer-content {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: var(--spacing-xl);
+    gap: calc(var(--spacing-xl) - 20px);
     margin-bottom: var(--spacing-xl);
     align-items: flex-start;
 }
@@ -1108,6 +1108,9 @@ input:focus-visible {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-right: -20px;
+    z-index: 1;
+    position: relative;
 }
 
 @media (max-width: 768px) {
