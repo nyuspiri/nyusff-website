@@ -1207,8 +1207,8 @@ input:focus-visible {
 .page-hero {
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
     color: white;
-    padding: calc(60px + var(--spacing-xl)) 0 var(--spacing-lg);
-    min-height: 500px;
+    padding: var(--spacing-2xl) 0;
+    min-height: 400px;
     width: 100%;
     margin: 0;
     display: flex;
@@ -2209,7 +2209,8 @@ input:focus-visible {
 
 /*Make the carousel opaque and black*/
 .homepage-carousel {
-    min-height: 550px;
+    min-height: calc(40vw + 200px);
+    max-height: 80vh;
     max-width: 1500px;
     margin: 0 auto;
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
