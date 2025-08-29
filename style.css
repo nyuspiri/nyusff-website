@@ -1272,8 +1272,8 @@ input:focus-visible {
 /* Bleeding photo frames for submission page */
 .hero-bleed-photo {
     position: absolute;
-    width: clamp(200px, 25vw, 414px);
-    height: clamp(133px, 16.7vw, 276px);
+    width: clamp(230px, 28.75vw, 476px);
+    height: clamp(153px, 19.2vw, 317px);
     top: 50%;
     transform: translateY(-50%);
     border-radius: 0px;
@@ -1495,8 +1495,8 @@ input:focus-visible {
 
     /* Adjust bleeding photo frames on mobile */
     .hero-bleed-photo {
-        width: clamp(160px, 20vw, 248px);
-        height: clamp(107px, 13.3vw, 166px);
+        width: clamp(184px, 23vw, 285px);
+        height: clamp(123px, 15.3vw, 191px);
     }
 
     .hero-bleed-photo.left-bleed {
