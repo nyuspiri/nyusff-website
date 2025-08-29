@@ -947,9 +947,10 @@ input:focus-visible {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr;
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
+    align-items: flex-start;
 }
 
 .footer-intro {
@@ -971,7 +972,7 @@ input:focus-visible {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
     align-items: flex-start;
 }
@@ -1075,7 +1076,7 @@ input:focus-visible {
 }
 
 .player-logo {
-    height: 165px;
+    height: 180px;
     width: auto;
     object-fit: contain;
     transition: var(--transition-base);
@@ -1106,7 +1107,7 @@ input:focus-visible {
 .footer-logo-section {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 @media (max-width: 768px) {
@@ -1185,6 +1186,11 @@ input:focus-visible {
         padding: var(--spacing-xs) var(--spacing-sm);
     }
 
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
     .footer-links {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -1197,7 +1203,7 @@ input:focus-visible {
     }
     
     .player-logo {
-        height: 120px;
+        height: 140px;
     }
 }
 
