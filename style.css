@@ -1272,8 +1272,8 @@ input:focus-visible {
 /* Bleeding photo frames for submission page */
 .hero-bleed-photo {
     position: absolute;
-    width: 360px;
-    height: 240px;
+    width: 414px;
+    height: 276px;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 0px;
@@ -1504,8 +1504,8 @@ input:focus-visible {
 
     /* Adjust bleeding photo frames on mobile */
     .hero-bleed-photo {
-        width: 216px;
-        height: 144px;
+        width: 248px;
+        height: 166px;
     }
 
     .hero-bleed-photo.left-bleed {
