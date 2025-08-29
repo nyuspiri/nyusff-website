@@ -1099,6 +1099,17 @@ input:focus-visible {
     justify-content: center;
 }
 
+.player-logo {
+    height: 185px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-base);
+}
+
+.player-logo:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: flex;
