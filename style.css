@@ -1394,7 +1394,7 @@ input:focus-visible {
 }
 
 .page-title {
-    font-size: clamp(2.5rem, 5vw, 4.375rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 900;
     margin-bottom: var(--spacing-lg);
     letter-spacing: -0.02em;
@@ -1411,7 +1411,7 @@ input:focus-visible {
 }
 
 .hero-text .page-subtitle {
-    font-size: clamp(1.25rem, 1.875vw, 1.5625rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 400;
     letter-spacing: 0.3px;
     line-height: 1.5;
