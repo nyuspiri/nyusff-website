@@ -63,6 +63,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    padding-bottom: 50px; /* Account for fixed footer */
 }
 
 /* Enhanced micro-interactions */
@@ -1043,18 +1044,23 @@ input:focus-visible {
 .footer-legal-bar {
     background-color: var(--color-black);
     color: var(--color-white);
-    padding: 15px 0;
+    padding: 15px var(--spacing-lg);
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    margin-top: var(--spacing-lg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    margin: 0;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-legal {
@@ -1202,12 +1208,20 @@ input:focus-visible {
     }
 
     .footer-legal-bar {
-        margin-left: calc(-1 * var(--spacing-xs));
-        margin-right: calc(-1 * var(--spacing-xs));
+        padding: 15px var(--spacing-sm);
+        flex-direction: column;
+        height: auto;
+        gap: var(--spacing-xs);
+    }
+
+    .footer-copyright {
+        order: 2;
+        font-size: 0.8rem;
     }
 
     .footer-legal {
         gap: var(--spacing-md);
+        order: 1;
     }
 }
 
