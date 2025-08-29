@@ -1066,19 +1066,20 @@ input:focus-visible {
     color: white;
 }
 
-.footer-app-icon {
+.sponsor-logos {
     display: flex;
+    gap: var(--spacing-md);
     align-items: center;
 }
 
-.footer-app-icon img {
-    width: 80px;
-    height: 80px;
+.sponsor-logos img {
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     transition: var(--transition-base);
 }
 
-.footer-app-icon img:hover {
+.sponsor-logos img:hover {
     transform: scale(1.1);
 }
 
@@ -1182,9 +1183,14 @@ input:focus-visible {
         gap: var(--spacing-lg);
     }
 
-    .footer-app-icon img {
-        width: 60px;
-        height: 60px;
+    .sponsor-logos {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .sponsor-logos img {
+        width: 50px;
+        height: 50px;
     }
 }
 
