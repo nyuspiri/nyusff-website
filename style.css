@@ -63,7 +63,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    padding-bottom: 50px; /* Account for fixed footer */
 }
 
 /* Enhanced micro-interactions */
@@ -1050,12 +1049,12 @@ input:focus-visible {
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    margin: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: var(--spacing-lg);
 }
 
 .footer-copyright {
@@ -1208,6 +1207,8 @@ input:focus-visible {
     }
 
     .footer-legal-bar {
+        margin-left: calc(-1 * var(--spacing-xs));
+        margin-right: calc(-1 * var(--spacing-xs));
         padding: 15px var(--spacing-sm);
         flex-direction: column;
         height: auto;
