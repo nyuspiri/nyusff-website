@@ -275,7 +275,7 @@ input:focus-visible {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(60px + var(--spacing-lg) - 100px) 0 0;
+    padding: calc(60px + var(--spacing-lg) - 100px);
 }
 
 .carousel-container {
