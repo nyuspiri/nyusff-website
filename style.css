@@ -2378,6 +2378,14 @@ input:focus-visible {
 }
 
 /* Sponsorship Page Styles */
+.sponsorship-page .page-title {
+    font-size: clamp(2.16rem, 4.32vw, 3.78rem); /* Reduced by 10% from clamp(2.4rem, 4.8vw, 4.2rem) */
+}
+
+.sponsorship-page .page-subtitle {
+    font-size: clamp(1.08rem, 1.62vw, 1.35rem); /* Reduced by 10% from clamp(1.2rem, 1.8vw, 1.5rem) */
+}
+
 .centered-intro-text {
     text-align: center;
     margin-top: var(--spacing-lg) !important;
