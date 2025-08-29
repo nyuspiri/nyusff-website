@@ -1066,20 +1066,19 @@ input:focus-visible {
     color: white;
 }
 
-.sponsor-logos {
+.footer-app-icon {
     display: flex;
-    gap: var(--spacing-md);
     align-items: center;
 }
 
-.sponsor-logos img {
-    width: 60px;
-    height: 60px;
+.footer-app-icon img {
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     transition: var(--transition-base);
 }
 
-.sponsor-logos img:hover {
+.footer-app-icon img:hover {
     transform: scale(1.1);
 }
 
@@ -1183,14 +1182,9 @@ input:focus-visible {
         gap: var(--spacing-lg);
     }
 
-    .sponsor-logos {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .sponsor-logos img {
-        width: 50px;
-        height: 50px;
+    .footer-app-icon img {
+        width: 60px;
+        height: 60px;
     }
 }
 
