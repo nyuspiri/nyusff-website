@@ -25,8 +25,40 @@
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
     --container-max-width: 1200px;
+    --wide-container-max-width: 1400px;
     --transition-base: 300ms ease;
     --purple: var(--color-nyu-violet); /* Alias for easier use */
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1400px) {
+    .homepage-carousel {
+        max-width: 1600px;
+    }
+    
+    .page-hero .container {
+        max-width: var(--wide-container-max-width);
+    }
+    
+    .films-carousel-track {
+        justify-content: center;
+    }
+    
+    .partner-logos {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .homepage-carousel {
+        max-width: 1800px;
+    }
+    
+    .hero-content {
+        gap: var(--spacing-2xl);
+        max-width: 1600px;
+        margin: 0 auto;
+    }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
