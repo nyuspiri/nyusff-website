@@ -1387,6 +1387,7 @@ input:focus-visible {
 
 .hero-text {
     padding-right: var(--spacing-xl);
+    padding-left: 75px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1430,6 +1431,7 @@ input:focus-visible {
     justify-content: flex-end;
     align-items: center;
     height: 100%;
+    padding-right: calc(40px + 40px);
 }
 
 .hero-photo {
