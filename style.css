@@ -1066,21 +1066,21 @@ input:focus-visible {
     color: white;
 }
 
-.sponsor-logos {
+.footer-logo {
     display: flex;
-    gap: var(--spacing-md);
     align-items: center;
+    justify-content: flex-end;
 }
 
-.sponsor-logos img {
-    width: 60px;
-    height: 60px;
+.player-logo {
+    height: 80px;
+    width: auto;
     object-fit: contain;
     transition: var(--transition-base);
 }
 
-.sponsor-logos img:hover {
-    transform: scale(1.1);
+.player-logo:hover {
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -1183,14 +1183,12 @@ input:focus-visible {
         gap: var(--spacing-lg);
     }
 
-    .sponsor-logos {
+    .footer-logo {
         justify-content: center;
-        flex-wrap: wrap;
     }
     
-    .sponsor-logos img {
-        width: 50px;
-        height: 50px;
+    .player-logo {
+        height: 60px;
     }
 }
 
