@@ -936,7 +936,7 @@ input:focus-visible {
 .site-footer {
     background-color: #1a1a1a;
     color: white;
-    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+    padding: var(--spacing-2xl) 0 0;
 }
 
 .footer-container {
@@ -1055,6 +1055,7 @@ input:focus-visible {
     margin-left: -50vw;
     margin-right: -50vw;
     margin-top: var(--spacing-lg);
+    margin-bottom: 0;
 }
 
 .footer-copyright {
