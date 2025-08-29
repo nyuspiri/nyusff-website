@@ -658,13 +658,13 @@ input:focus-visible {
     margin-bottom: var(--spacing-md);
     border-radius: 8px;
     overflow: visible;
-    box-shadow: 0 2px 8px rgba(87, 6, 140, 0.12), 0 8px 24px rgba(87, 6, 140, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     position: relative;
     cursor: pointer;
     perspective: 1000px;
-    border: 1px solid rgba(87, 6, 140, 0.1);
+    border: none;
     transform-style: preserve-3d;
+    background: transparent;
 }
 
 .film-poster::before {
@@ -742,6 +742,8 @@ input:focus-visible {
 .poster-front {
     transform: rotateY(0deg) translateZ(1px);
     z-index: 2;
+    background: transparent;
+    box-shadow: 0 2px 8px rgba(87, 6, 140, 0.12), 0 8px 24px rgba(87, 6, 140, 0.08);
 }
 
 .poster-back {
@@ -752,6 +754,7 @@ input:focus-visible {
     justify-content: center;
     padding: var(--spacing-md);
     z-index: 1;
+    box-shadow: 0 2px 8px rgba(87, 6, 140, 0.12), 0 8px 24px rgba(87, 6, 140, 0.08);
 }
 
 .film-poster.flipped .poster-front {
