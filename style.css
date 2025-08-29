@@ -1075,7 +1075,7 @@ input:focus-visible {
 }
 
 .player-logo {
-    height: 165px;
+    height: 185px;
     width: auto;
     object-fit: contain;
     transition: var(--transition-base);
