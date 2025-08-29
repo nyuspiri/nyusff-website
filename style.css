@@ -1624,9 +1624,9 @@ body {
 .partner-logos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     justify-content: center;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -1635,13 +1635,13 @@ body {
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transform: scale(1.2);
-    min-height: 120px;
+    transform: scale(1.02);
+    min-height: 102px;
 }
 
 .logo-placeholder {
