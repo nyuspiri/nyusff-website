@@ -2379,7 +2379,7 @@ input:focus-visible {
 
 /* Sponsorship Page Styles */
 .sponsorship-page .page-title {
-    font-size: clamp(2.16rem, 4.32vw, 3.78rem); /* Reduced by 10% from clamp(2.4rem, 4.8vw, 4.2rem) */
+    font-size: clamp(1.8rem, 3.5vw, 3.2rem); /* Further reduced to fit on one line */
 }
 
 .sponsorship-page .page-subtitle {
