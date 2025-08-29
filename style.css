@@ -1291,38 +1291,6 @@ input:focus-visible {
     min-height: 400px;
 }
 
-.page-hero .hero-content {
-    grid-template-columns: 1fr 1.2fr;
-    gap: 0;
-    max-width: none;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-}
-
-.page-hero .hero-text {
-    padding-left: max(var(--spacing-lg), calc((100vw - var(--container-max-width)) / 2));
-    padding-right: var(--spacing-xl);
-}
-
-.page-hero .hero-image {
-    justify-content: flex-end;
-    padding-right: 0;
-    margin-right: 0;
-}
-
-.page-hero .hero-photo {
-    max-width: none;
-    width: 100%;
-    height: 450px;
-    border-radius: 0;
-}
-
-.page-hero .hero-photo .photo-placeholder {
-    height: 450px;
-    max-width: none;
-    width: 100%;
-}
-
 /* Hero content with button layout for submission page */
 .hero-content-with-button {
     display: flex;
