@@ -658,14 +658,13 @@ input:focus-visible {
     margin-bottom: var(--spacing-md);
     border-radius: 8px;
     overflow: visible;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     cursor: pointer;
     perspective: 1000px;
     border: none;
     transform-style: preserve-3d;
     background: transparent;
-    box-shadow: 0 2px 8px rgba(87, 6, 140, 0.12), 0 8px 24px rgba(87, 6, 140, 0.08);
 }
 
 .film-poster::before {
