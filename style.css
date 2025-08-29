@@ -1810,6 +1810,16 @@ input:focus-visible {
     position: relative;
 }
 
+.partner-logo-box a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .partner-logo-box::before {
     content: '';
     position: absolute;
