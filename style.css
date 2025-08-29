@@ -9,7 +9,7 @@
     --color-black: #000000;
     --color-white: #ffffff;
     --color-nyu-violet: #57068c;
-    --color-nyu-purple: #8901e1; /* Corrected typo from original */
+    --color-nyu-purple: #8900e1;
     --color-accent: #57068c;
     --color-bg: #ffffff;
     --color-grey1: #f8f9fa;
@@ -35,15 +35,15 @@
     .homepage-carousel {
         max-width: 1600px;
     }
-
+    
     .page-hero .container {
         max-width: var(--wide-container-max-width);
     }
-
+    
     .films-carousel-track {
         justify-content: center;
     }
-
+    
     .partner-logos {
         max-width: 1000px;
     }
@@ -53,7 +53,7 @@
     .homepage-carousel {
         max-width: 1800px;
     }
-
+    
     .hero-content {
         gap: var(--spacing-2xl);
         max-width: 1600px;
@@ -275,7 +275,7 @@ input:focus-visible {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(60px + var(--spacing-lg) - 100px);
+    padding: calc(60px + var(--spacing-lg) - 100px) 0 0;
 }
 
 .carousel-container {
@@ -1196,7 +1196,7 @@ input:focus-visible {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+    
     .sponsor-logos img {
         width: 50px;
         height: 50px;
@@ -1207,8 +1207,8 @@ input:focus-visible {
 .page-hero {
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
     color: white;
-    padding: var(--spacing-2xl) 0;
-    min-height: 400px;
+    padding: calc(60px + var(--spacing-lg) - 60px) 0 var(--spacing-lg); /* Adjusted padding-top */
+    min-height: 500px;
     width: 100%;
     margin: 0;
     display: flex;
@@ -1289,6 +1289,46 @@ input:focus-visible {
     align-items: center;
     width: 100%;
     min-height: 400px;
+}
+
+/* Centered hero layout for about page */
+.page-hero.about-hero .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-hero.about-hero .hero-text {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hero.about-hero .page-title {
+    text-align: center;
+}
+
+.page-hero.about-hero .hero-text .page-subtitle {
+    text-align: center;
+    max-width: 700px;
+}
+
+.page-hero.about-hero .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.page-hero.about-hero .hero-photo {
+    max-width: 500px;
 }
 
 /* Hero content with button layout for submission page */
@@ -1380,42 +1420,37 @@ input:focus-visible {
     font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
-.page-hero .hero-image {
+.hero-image {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100%;
-    position: relative;
-    overflow: visible;
 }
 
-.page-hero .hero-photo {
-    width: calc(50vw + 100px);
-    height: 400px;
+.hero-photo {
+    width: 100%;
+    max-width: 450px;
+    margin: 0;
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(87, 6, 140, 0.3);
-    margin-right: calc(-50vw + 50% - var(--spacing-lg));
 }
 
-.page-hero .hero-photo .photo-placeholder {
-    height: 400px;
+.hero-photo .photo-placeholder {
     width: 100%;
+    max-width: 450px;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(87, 6, 140, 0.3);
+}
+
+.hero-photo .photo-placeholder {
+    height: 300px;
     background: linear-gradient(135deg, #333 0%, #666 100%);
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-hero .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
 }
 
 /* Responsive adjustments for hero section */
@@ -2080,12 +2115,12 @@ input:focus-visible {
         width: min(300px, 90vw);
         height: auto;
     }
-
+    
     .cta-section img {
         width: min(200px, 80vw);
         height: auto;
     }
-
+    
     .big-submit-button {
         font-size: 0.9rem;
         padding: var(--spacing-sm) var(--spacing-lg);
@@ -2097,11 +2132,11 @@ input:focus-visible {
     .hero-button-section img {
         width: min(250px, 85vw);
     }
-
+    
     .cta-section img {
         width: min(180px, 75vw);
     }
-
+    
     .big-submit-button {
         font-size: 0.8rem;
         padding: var(--spacing-xs) var(--spacing-md);
@@ -2150,32 +2185,32 @@ input:focus-visible {
     .container {
         padding: 0 var(--spacing-xs);
     }
-
+    
     .nav-container {
         padding: 0 var(--spacing-xs);
     }
-
+    
     .page-hero .container {
         padding: 0 var(--spacing-sm);
     }
-
+    
     .partner-logos {
         grid-template-columns: 1fr;
         max-width: 200px;
     }
-
+    
     .person-info {
         padding: var(--spacing-md);
     }
-
+    
     .text-block h2 {
         font-size: 1.75rem;
     }
-
+    
     .slide-title {
         font-size: 2rem;
     }
-
+    
     .page-title {
         font-size: 1.8rem;
     }
@@ -2209,8 +2244,7 @@ input:focus-visible {
 
 /*Make the carousel opaque and black*/
 .homepage-carousel {
-    min-height: calc(40vw + 200px);
-    max-height: 80vh;
+    min-height: 550px;
     max-width: 1500px;
     margin: 0 auto;
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
@@ -2219,7 +2253,7 @@ input:focus-visible {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(60px + var(--spacing-xl)) 0 var(--spacing-lg);
+    padding: calc(60px + var(--spacing-lg) - 100px) 0 0;
 }
 
 /*Add a little bit more purple lining in creative places*/
@@ -2228,7 +2262,7 @@ input:focus-visible {
 .page-hero {
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
     color: white;
-    padding: calc(60px + var(--spacing-xl)) 0 var(--spacing-lg);
+    padding: calc(60px + var(--spacing-lg) - 60px) 0 var(--spacing-lg); /* Adjusted padding-top */
     min-height: 500px;
     width: 100%;
     margin: 0;
