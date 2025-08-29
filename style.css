@@ -261,7 +261,7 @@ input:focus-visible {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(60px + var(--spacing-lg) - 100px) 0 0;
+    padding: calc(60px + var(--spacing-lg) - 100px);
 }
 
 .carousel-container {
@@ -1442,16 +1442,7 @@ input:focus-visible {
 }
 
 .hero-photo .photo-placeholder {
-    width: 100%;
-    max-width: 450px;
-    margin: 0;
-    border-radius: 0;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(87, 6, 140, 0.3);
-}
-
-.hero-photo .photo-placeholder {
-    height: 300px;
+    height: 250px;
     background: linear-gradient(135deg, #333 0%, #666 100%);
     color: white;
     font-size: 1.1rem;
@@ -2301,7 +2292,7 @@ input:focus-visible {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(60px + var(--spacing-lg) - 100px) 0 0;
+    padding: calc(60px + var(--spacing-lg) - 100px);
 }
 
 /*Add a little bit more purple lining in creative places*/
