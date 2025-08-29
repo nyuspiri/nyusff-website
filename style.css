@@ -657,13 +657,14 @@ input:focus-visible {
     height: 280px;
     margin-bottom: var(--spacing-md);
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 2px 8px rgba(87, 6, 140, 0.12), 0 8px 24px rgba(87, 6, 140, 0.08);
-    transition: var(--transition-base);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     cursor: pointer;
     perspective: 1000px;
     border: 1px solid rgba(87, 6, 140, 0.1);
+    transform-style: preserve-3d;
 }
 
 .film-poster::before {
@@ -685,8 +686,12 @@ input:focus-visible {
 }
 
 .film-card:hover .film-poster {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(87, 6, 140, 0.2);
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 12px 25px rgba(87, 6, 140, 0.25), 0 4px 8px rgba(87, 6, 140, 0.15);
+}
+
+.film-card:hover .film-poster.flipped {
+    transform: translateY(-8px) rotateX(2deg);
 }
 
 .poster-front, .poster-back {
@@ -694,8 +699,10 @@ input:focus-visible {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
-    transition: transform 0.6s;
-    border-radius: 0;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(87, 6, 140, 0.12), 0 8px 24px rgba(87, 6, 140, 0.08);
 }
 
 .poster-front img {
@@ -734,24 +741,26 @@ input:focus-visible {
 }
 
 .poster-front {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) translateZ(1px);
+    z-index: 2;
 }
 
 .poster-back {
-    transform: rotateY(180deg);
-    background: #2d1b69;
+    transform: rotateY(180deg) translateZ(1px);
+    background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 50%, #6b21a8 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-md);
+    z-index: 1;
 }
 
 .film-poster.flipped .poster-front {
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg) translateZ(1px);
 }
 
 .film-poster.flipped .poster-back {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) translateZ(1px);
 }
 
 .poster-placeholder {
