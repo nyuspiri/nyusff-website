@@ -1771,6 +1771,28 @@ input:focus-visible {
     margin: 0 auto;
 }
 
+/* Scale up partners section for larger screens */
+@media (min-width: 1200px) {
+    .partner-logos {
+        max-width: 1200px;
+        gap: var(--spacing-xl);
+    }
+    
+    .partner-logo-box {
+        min-height: 140px;
+        padding: var(--spacing-lg);
+    }
+    
+    .partners-section h3 {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-2xl);
+    }
+    
+    .partners-section {
+        padding: var(--spacing-2xl) var(--spacing-xl);
+    }
+}
+
 .partner-logo-box {
     aspect-ratio: 3/2;
     background: white;
