@@ -504,6 +504,7 @@ input:focus-visible {
     border-left: none;
     box-shadow: 0 4px 6px -1px rgba(87, 6, 140, 0.15);
     margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
 }
 
 .mission-quote p {
@@ -536,7 +537,7 @@ input:focus-visible {
 
 /* CTAs Section */
 .ctas-section {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-lg) 0 var(--spacing-2xl);
     background-color: var(--color-grey1);
 }
 
@@ -552,17 +553,17 @@ input:focus-visible {
 
 .cta-link {
     display: inline-block;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: calc(var(--spacing-md) * 0.95) calc(var(--spacing-lg) * 0.95);
     background-color: var(--color-black);
     color: white;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.265rem;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     border-radius: 0;
     transition: var(--transition-base);
-    min-height: 54px;
+    min-height: 51px;
     display: flex;
     align-items: center;
     justify-content: center;
