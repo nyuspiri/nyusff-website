@@ -1599,7 +1599,7 @@ input:focus-visible {
     color: var(--color-black);
     font-size: clamp(2.34375rem, 3.75vw, 3.28125rem);
     font-weight: 900;
-    margin: calc(var(--spacing-md) - 25px) 0;
+    margin: var(--spacing-xl) 0 var(--spacing-lg);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: -0.01em;
