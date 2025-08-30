@@ -145,7 +145,7 @@ input:focus-visible {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: 0;
 }
 
 .nav-link {
