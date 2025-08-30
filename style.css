@@ -250,6 +250,12 @@ input:focus-visible {
     position: relative;
 }
 
+/* Remove spacing between year items specifically */
+.dropdown-content .nav-dropdown.nested > a {
+    margin: 0;
+    border-bottom: none;
+}
+
 .dropdown-content a:hover {
     background-color: rgba(87, 6, 140, 0.08);
     color: var(--color-nyu-violet);
@@ -2359,7 +2365,7 @@ input:focus-visible {
     position: absolute;
     top: -8px;
     left: calc(100% + 15px);
-    width: 150px;
+    width: 160px;
     background: white;
     box-shadow: 0 8px 25px rgba(87, 6, 140, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
