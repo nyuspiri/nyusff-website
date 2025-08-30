@@ -184,14 +184,14 @@ input:focus-visible {
 }
 
 .nav-dropdown:last-child .nav-dropdown.nested .dropdown-content.nested {
-    left: calc(-100% - 5px);
+    left: calc(-100% - 15px);
     right: auto;
 }
 
 /* Additional positioning for dropdowns near screen edges */
 @media (max-width: 1200px) {
     .nav-dropdown:nth-last-child(-n+2) .nav-dropdown.nested .dropdown-content.nested {
-        left: calc(-100% - 5px);
+        left: calc(-100% - 15px);
         right: auto;
     }
 }
@@ -254,8 +254,6 @@ input:focus-visible {
 .dropdown-content .nav-dropdown.nested > a {
     margin: 0;
     border-bottom: none;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
 }
 
 .dropdown-content a:hover {
@@ -2366,7 +2364,7 @@ input:focus-visible {
 .nav-dropdown.nested .dropdown-content.nested {
     position: absolute;
     top: -8px;
-    left: calc(100% + 5px);
+    left: calc(100% + 15px);
     width: 160px;
     background: white;
     box-shadow: 0 8px 25px rgba(87, 6, 140, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
