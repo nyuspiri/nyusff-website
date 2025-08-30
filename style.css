@@ -155,10 +155,14 @@ input:focus-visible {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: 0 var(--spacing-lg);
     border-radius: 0;
     transition: var(--transition-base);
     position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-link:hover {
@@ -168,6 +172,9 @@ input:focus-visible {
 
 .nav-dropdown {
     position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 /* Prevent dropdown from extending beyond viewport */
