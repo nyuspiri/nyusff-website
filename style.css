@@ -349,6 +349,10 @@ input:focus-visible {
     border: 2px solid #000000;
     border-radius: 0;
     transition: var(--transition-base);
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide-cta-link:hover {
@@ -1273,7 +1277,7 @@ input:focus-visible {
         gap: var(--spacing-xs);
         text-align: center;
     }
-    
+
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
@@ -2005,16 +2009,16 @@ input:focus-visible {
         min-height: 300px;
         padding: calc(60px + var(--spacing-sm)) 0 var(--spacing-sm);
     }
-    
+
     .homepage-carousel {
         min-height: 300px;
         padding: var(--spacing-md);
     }
-    
+
     .slide-title {
         font-size: clamp(1.8rem, 4vw, 2.5rem);
     }
-    
+
     .slide-subtitle {
         font-size: clamp(1rem, 2vw, 1.2rem);
     }
@@ -2026,13 +2030,13 @@ input:focus-visible {
         max-width: var(--wide-container-max-width);
         margin: 0 auto;
     }
-    
+
     .nav-container {
         max-width: var(--wide-container-max-width);
         margin: 0 auto;
         padding: 0 var(--spacing-lg);
     }
-    
+
     .footer-container {
         max-width: var(--wide-container-max-width);
         margin: 0 auto;
@@ -2045,7 +2049,7 @@ input:focus-visible {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
     }
-    
+
     .partner-logo {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
@@ -2059,11 +2063,11 @@ input:focus-visible {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     .text-carousel-track {
         animation: none;
     }
-    
+
     .film-poster {
         transition: none;
     }
@@ -2075,11 +2079,11 @@ input:focus-visible {
         background-color: var(--color-black);
         color: var(--color-white);
     }
-    
+
     .film-poster {
         border: 2px solid var(--color-black);
     }
-    
+
     .partner-logo-box {
         border: 2px solid var(--color-black);
     }
@@ -2366,16 +2370,16 @@ input:focus-visible {
     .nav-menu {
         gap: var(--spacing-sm);
     }
-    
+
     .nav-link {
         padding: 0 var(--spacing-md);
         font-size: 0.85rem;
     }
-    
+
     .hero-content {
         gap: var(--spacing-lg);
     }
-    
+
     .films-carousel-track {
         gap: var(--spacing-md);
     }
