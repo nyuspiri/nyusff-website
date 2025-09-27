@@ -2108,6 +2108,11 @@ input:focus-visible {
     object-position: center top;
 }
 
+/* Move Judith's photo 50 pixels downward */
+.person-photo img[alt="Judith Balkin"] {
+    transform: translateY(50px);
+}
+
 .person-card {
     background: white;
     border-radius: 0;
