@@ -59,5 +59,13 @@ args = "static-web-server -w ./.config/static-web-server.toml"
 localPort = 80
 externalPort = 80
 
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+[[ports]]
+localPort = 46347
+externalPort = 3000
+
 [agent]
 expertMode = true
