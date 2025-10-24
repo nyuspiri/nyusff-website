@@ -10,7 +10,7 @@ publicDir = "/"
 deploymentTarget = "static"
 
 [workflows]
-runButton = "Project"
+runButton = "Run"
 
 [[workflows.workflow]]
 name = "Serve static"
@@ -46,6 +46,15 @@ waitForPort = 5000
 [workflows.workflow.metadata]
 outputType = "webview"
 
+[[workflows.workflow]]
+name = "Run"
+author = 45363329
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "static-web-server -w ./.config/static-web-server.toml"
+
 [[ports]]
 localPort = 80
 externalPort = 80
@@ -53,10 +62,6 @@ externalPort = 80
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[[ports]]
-localPort = 44607
-externalPort = 3000
 
 [agent]
 expertMode = true
