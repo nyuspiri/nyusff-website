@@ -1497,6 +1497,30 @@ input:focus-visible {
     font-weight: 600;
 }
 
+/* Film posters grid for TV Special page */
+.film-posters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 585px;
+}
+
+.poster-photo {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(87, 6, 140, 0.3);
+}
+
+.poster-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
 /* Responsive adjustments for hero section */
 @media (max-width: 768px) {
     .hero-content {
@@ -1527,6 +1551,11 @@ input:focus-visible {
 
     .hero-photo .photo-placeholder {
         height: 250px;
+    }
+
+    .film-posters-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
 
     /* Responsive adjustments for submission page hero */
