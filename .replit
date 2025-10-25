@@ -3,7 +3,7 @@ modules = ["python-3.11", "web"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["static-web-server"]
+packages = ["poppler_utils", "static-web-server"]
 
 [deployment]
 publicDir = "/"
@@ -62,10 +62,6 @@ externalPort = 80
 [[ports]]
 localPort = 5000
 externalPort = 5000
-
-[[ports]]
-localPort = 37703
-externalPort = 3002
 
 [[ports]]
 localPort = 44875
