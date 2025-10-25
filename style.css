@@ -3042,3 +3042,308 @@ input:focus-visible {
     color: var(--purple);
     font-size: 0.8rem;
 }
+/* ========================================
+   COMPREHENSIVE MOBILE OPTIMIZATIONS FOR IPHONE
+   ======================================== */
+
+/* Enhanced Mobile Styles for all pages */
+@media (max-width: 768px) {
+    /* General Layout */
+    body {
+        font-size: 16px; /* Ensure readable text on mobile */
+    }
+
+    .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    /* Hero Section Optimizations */
+    .page-hero {
+        min-height: auto;
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+
+    .page-title {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .page-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+
+    /* Grid Optimizations */
+    .benefits-grid,
+    .news-grid,
+    .people-grid,
+    .sponsorship-tiers {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg);
+    }
+
+    /* Text Block Improvements */
+    .text-block {
+        margin: var(--spacing-xl) 0;
+        padding: 0;
+    }
+
+    .text-block h2 {
+        font-size: 2rem !important;
+        margin: var(--spacing-lg) 0;
+    }
+
+    .text-block h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .centered-intro-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Benefit Items / Cards */
+    .benefit-item,
+    .tier-card,
+    .news-item {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .benefit-item h3,
+    .tier-card h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .benefit-item p,
+    .tier-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Sponsorship Tiers Mobile */
+    .tier-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .tier-price {
+        font-size: 1.75rem;
+    }
+
+    .tier-benefits ul li {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) 0;
+    }
+
+    /* Partner Logos */
+    .partner-logos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: var(--spacing-md);
+    }
+
+    .partner-logo {
+        max-width: 120px;
+        height: auto;
+    }
+
+    /* Current Sponsors Section */
+    .current-sponsors {
+        margin: var(--spacing-xl) 0;
+    }
+
+    /* Enhanced CTA Sections */
+    .cta-section.enhanced-cta,
+    .cta-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .enhanced-cta h2,
+    .cta-section h2 {
+        font-size: 2rem !important;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .enhanced-cta p,
+    .cta-section p {
+        font-size: 1rem !important;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .btn-primary-enhanced {
+        font-size: 1rem;
+        padding: var(--spacing-md) var(--spacing-xl);
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    /* TV Special Video Container */
+    .video-container {
+        margin: var(--spacing-lg) 0;
+    }
+
+    /* Credits Section */
+    .credits-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .credits-section h2 {
+        font-size: 2rem;
+    }
+
+    .credits-section h3 {
+        font-size: 1.25rem;
+        margin-top: var(--spacing-lg);
+    }
+
+    .credits-section ul li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Film Cards in Carousel */
+    .films-carousel {
+        padding: var(--spacing-lg) 0;
+    }
+
+    /* Activation List */
+    .activation-list {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg);
+    }
+
+    .activation-category {
+        padding: var(--spacing-lg);
+    }
+
+    /* Touch-friendly links and buttons */
+    a, button, .nav-link, .btn-primary, .btn-secondary {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* News Items */
+    .news-item {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .news-title {
+        font-size: 1.25rem;
+    }
+
+    .news-excerpt {
+        font-size: 0.95rem;
+    }
+
+    /* Homepage Carousel */
+    .homepage-carousel {
+        min-height: 400px;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .slide-title {
+        font-size: 2.5rem !important;
+    }
+
+    .slide-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Content Sections */
+    .content-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .centered-content {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Photo Frames */
+    .photo-frame {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Table Responsiveness */
+    table {
+        font-size: 0.9rem;
+    }
+
+    /* Better list spacing */
+    ul, ol {
+        padding-left: var(--spacing-lg);
+    }
+
+    li {
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+/* Extra Small Devices (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .page-title {
+        font-size: 2rem !important;
+    }
+
+    .text-block h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .enhanced-cta h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .slide-title {
+        font-size: 2rem !important;
+    }
+
+    .partner-logos {
+        grid-template-columns: 1fr !important;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .page-hero {
+        min-height: auto;
+        padding: var(--spacing-lg) 0 var(--spacing-md);
+    }
+
+    .homepage-carousel {
+        min-height: 300px;
+    }
+}
+
+/* iOS Safari Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+    /* Fix iOS Safari viewport height issues */
+    .nav-menu.active {
+        max-height: 85vh;
+    }
+
+    /* Fix iOS scroll momentum */
+    .nav-menu {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Fix iOS button click delay */
+    a, button, .nav-link {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+}
