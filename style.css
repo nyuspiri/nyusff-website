@@ -1299,7 +1299,7 @@ input:focus-visible {
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
     color: white;
     padding: calc(60px + var(--spacing-lg) - 60px) 0 var(--spacing-lg); /* Adjusted padding-top */
-    min-height: 500px;
+    min-height: 150px;
     width: 100%;
     margin: 0;
     display: flex;
@@ -2532,7 +2532,7 @@ input:focus-visible {
     background: linear-gradient(135deg, #2d1b69 0%, #4c1d95 25%, #6b21a8 50%, #7c3aed 75%, #8b5cf6 100%);
     color: white;
     padding: calc(60px + var(--spacing-lg) - 60px) 0 var(--spacing-lg); /* Adjusted padding-top */
-    min-height: 500px;
+    min-height: 150px;
     width: 100%;
     margin: 0;
     display: flex;
