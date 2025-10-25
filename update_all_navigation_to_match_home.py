@@ -1,11 +1,10 @@
-
 #!/usr/bin/env python3
 import os
 import re
 
 # List of all HTML files that need updating (excluding index.html since it's the reference)
 html_files = [
-    'contact.html', 'people.html', 'sponsorship.html', 'submission.html',
+    'about.html', 'contact.html', 'people.html', 'sponsorship.html', 'submission.html',
     'festival-2022.html', 'festival-2023.html', 'festival-2024.html', 'festival-2025.html', 'festival-2026.html',
     'honoree-2022.html', 'honoree-2023.html', 'honoree-2024.html', 'honoree-2025.html', 'honoree-2026.html',
     'mentions-2022.html', 'mentions-2023.html', 'mentions-2024.html', 'mentions-2025.html', 'mentions-2026.html',
@@ -16,7 +15,7 @@ html_files = [
     'news-award-winners.html', 'news-tv-special.html'
 ]
 
-# The correct navigation structure from index.html
+# The correct navigation structure from index.html with TV SPECIALS
 correct_navigation = '''                <div class="nav-menu">
                     <a href="index.html" class="nav-link">HOME</a>
                     <a href="submission.html" class="nav-link">SUBMISSION</a>
@@ -86,6 +85,16 @@ correct_navigation = '''                <div class="nav-menu">
                             </div>
                         </div>
                     </div>
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-link">TV SPECIALS <span class="dropdown-arrow">▼</span></a>
+                        <div class="dropdown-content">
+                            <a href="tv-special-2025.html">2025</a>
+                            <a href="tv-special-2024.html">2024</a>
+                            <a href="tv-special-2023.html">2023</a>
+                            <a href="tv-special-2022.html">2022</a>
+                            <a href="tv-special-2021.html">2021</a>
+                        </div>
+                    </div>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle Menu">
                     <span></span>
@@ -138,14 +147,14 @@ def update_navigation_in_file(filename):
         return False
 
 def main():
-    print("Updating all HTML files to match home page navigation...")
+    print("Updating all HTML files to have TV SPECIALS navigation...")
     updated_count = 0
     
     for filename in html_files:
         if update_navigation_in_file(filename):
             updated_count += 1
     
-    print(f"\nCompleted: Updated navigation in {updated_count} files to match home page.")
+    print(f"\nCompleted: Updated navigation in {updated_count} files with TV SPECIALS dropdown.")
 
 if __name__ == "__main__":
     main()
