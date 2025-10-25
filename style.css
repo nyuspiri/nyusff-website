@@ -2176,9 +2176,9 @@ input:focus-visible {
     object-position: center top;
 }
 
-/* Move Judith's photo 50 pixels downward */
+/* Adjust Judith's photo positioning */
 .person-photo img[alt="Judith Balkin"] {
-    transform: translateY(50px);
+    object-position: center 20%;
 }
 
 .person-card {
