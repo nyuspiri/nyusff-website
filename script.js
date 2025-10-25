@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 trigger.parentNode.replaceChild(newTrigger, trigger);
                 
                 newTrigger.addEventListener('click', function(e) {
-                    // Only handle as dropdown on mobile (screen width <= 768px)
-                    if (window.innerWidth <= 768) {
+                    // Only handle as dropdown on mobile (screen width <= 1024px)
+                    if (window.innerWidth <= 1024) {
                         e.preventDefault();
                         e.stopPropagation();
                         
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             // Close mobile menu and dropdowns if switching to desktop
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 if (navMenu) navMenu.classList.remove('active');
                 if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
                 

@@ -1176,7 +1176,7 @@ input:focus-visible {
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .mobile-menu-toggle {
         display: flex;
         min-height: 44px;
