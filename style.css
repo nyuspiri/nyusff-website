@@ -1020,7 +1020,8 @@ input:focus-visible {
 
 .substack-carousel-track .news-item {
     flex-shrink: 0;
-    height: 380px;
+    height: auto;
+    min-height: 400px;
 }
 
 .substack-carousel-arrow {

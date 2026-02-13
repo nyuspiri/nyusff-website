@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (substackTrack) {
         var SUBSTACK_FEED_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://nyusff.substack.com/feed';
         var substackIndex = 0;
-        var substackPerView = 3;
+        var substackPerView = 2.5;
         var substackTotal = 0;
         var substackGap = 16;
 
