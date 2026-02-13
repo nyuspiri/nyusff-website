@@ -110,4 +110,149 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 250);
     });
+
+    // Substack RSS Feed Carousel
+    const substackTrack = document.getElementById('substackTrack');
+    const substackDots = document.getElementById('substackDots');
+
+    if (substackTrack) {
+        const SUBSTACK_FEED_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://nyusff.substack.com/feed';
+        let substackIndex = 0;
+        let substackPerView = 3;
+        let substackTotal = 0;
+
+        function getSubstackPerView() {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 1024) return 2;
+            return 3;
+        }
+
+        function extractImageFromContent(content) {
+            const div = document.createElement('div');
+            div.innerHTML = content;
+            const img = div.querySelector('img');
+            return img ? img.src : null;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function stripHtml(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            return div.textContent || div.innerText || '';
+        }
+
+        function updateSubstackCarousel() {
+            substackPerView = getSubstackPerView();
+            const gap = 24;
+            const viewportWidth = substackTrack.parentElement.offsetWidth;
+            const cardWidth = (viewportWidth - gap * (substackPerView - 1)) / substackPerView;
+            const maxIndex = Math.max(0, substackTotal - substackPerView);
+            if (substackIndex > maxIndex) substackIndex = maxIndex;
+            const offset = substackIndex * (cardWidth + gap);
+            substackTrack.style.transform = 'translateX(-' + offset + 'px)';
+            updateSubstackDots();
+            updateSubstackArrows();
+        }
+
+        function updateSubstackDots() {
+            if (!substackDots) return;
+            const totalDots = Math.max(1, substackTotal - substackPerView + 1);
+            substackDots.innerHTML = '';
+            for (let i = 0; i < totalDots; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'substack-dot' + (i === substackIndex ? ' active' : '');
+                dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                dot.addEventListener('click', function() {
+                    substackIndex = i;
+                    updateSubstackCarousel();
+                });
+                substackDots.appendChild(dot);
+            }
+        }
+
+        function updateSubstackArrows() {
+            const leftArrow = document.querySelector('.substack-arrow-left');
+            const rightArrow = document.querySelector('.substack-arrow-right');
+            if (leftArrow) leftArrow.disabled = substackIndex <= 0;
+            if (rightArrow) rightArrow.disabled = substackIndex >= substackTotal - substackPerView;
+        }
+
+        fetch(SUBSTACK_FEED_URL)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+                    substackTrack.innerHTML = '<div class="substack-loading">No posts found.</div>';
+                    return;
+                }
+
+                var posts = data.items.slice(0, 10);
+                substackTotal = posts.length;
+                substackTrack.innerHTML = '';
+
+                posts.forEach(function(post) {
+                    var imgSrc = post.thumbnail || extractImageFromContent(post.content);
+                    var excerpt = stripHtml(post.description).substring(0, 150);
+                    if (stripHtml(post.description).length > 150) excerpt += '...';
+
+                    var article = document.createElement('article');
+                    article.className = 'news-item';
+
+                    var imageHtml = '';
+                    if (imgSrc) {
+                        imageHtml = '<div class="news-image"><img src="' + imgSrc + '" alt="' + post.title.replace(/"/g, '&quot;') + '" class="substack-post-thumbnail"></div>';
+                    } else {
+                        imageHtml = '<div class="news-image"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--color-nyu-purple), var(--color-nyu-violet));color:white;font-family:var(--font-header);font-size:1.2rem;padding:20px;text-align:center;">' + post.title + '</div></div>';
+                    }
+
+                    article.innerHTML = '<a href="' + post.link + '" target="_blank" class="news-item-link">' +
+                        imageHtml +
+                        '<div class="news-content">' +
+                        '<h3 class="news-title">' + post.title + '</h3>' +
+                        '<p class="news-date">' + formatDate(post.pubDate) + '</p>' +
+                        '<p class="news-excerpt">' + excerpt + '</p>' +
+                        '</div></a>';
+
+                    substackTrack.appendChild(article);
+                });
+
+                updateSubstackCarousel();
+            })
+            .catch(function(err) {
+                console.error('Error loading Substack feed:', err);
+                substackTrack.innerHTML = '<div class="substack-loading">Unable to load posts. Visit <a href="https://nyusff.substack.com/" target="_blank">our Substack</a> directly.</div>';
+            });
+
+        var leftArrow = document.querySelector('.substack-arrow-left');
+        var rightArrow = document.querySelector('.substack-arrow-right');
+
+        if (leftArrow) {
+            leftArrow.addEventListener('click', function() {
+                if (substackIndex > 0) {
+                    substackIndex--;
+                    updateSubstackCarousel();
+                }
+            });
+        }
+
+        if (rightArrow) {
+            rightArrow.addEventListener('click', function() {
+                if (substackIndex < substackTotal - substackPerView) {
+                    substackIndex++;
+                    updateSubstackCarousel();
+                }
+            });
+        }
+
+        var substackResizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(substackResizeTimer);
+            substackResizeTimer = setTimeout(function() {
+                updateSubstackCarousel();
+            }, 200);
+        });
+    }
 });

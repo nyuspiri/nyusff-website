@@ -347,55 +347,22 @@
             </div>
         </section>
 
-        <!-- Latest News Section -->
+        <!-- Latest News Section - Substack Feed -->
         <section class="latest-news-section">
             <div class="container">
                 <h2 class="section-title">Latest News</h2>
-                <div class="news-grid">
-                    <article class="news-item">
-                        <a href="news-tv-special.html" class="news-item-link">
-                            <div class="news-image">
-                                <img src="Partner Logos/SNY.png" alt="SNY Logo">
-                            </div>
-                            <div class="news-content">
-                                <h3 class="news-title">5th Annual NYUSFF TV Special Now Airing on SNY!</h3>
-                                <p class="news-date">September 25, 2025</p>
-                                <p class="news-excerpt">
-                                    Click here to find the live TV viewing schedule on SportsNet New York
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="news-item">
-                        <a href="news-award-winners.html" class="news-item-link">
-                            <div class="news-image">
-                                <img src="assets/027_trophies.avif" alt="Award Trophies">
-                            </div>
-                            <div class="news-content">
-                                <h3 class="news-title">5th Annual NYUSFF Award Winners Announced!</h3>
-                                <p class="news-date">April 27, 2025</p>
-                                <p class="news-excerpt">
-                                    View the list of award winners from this year's NYUSFF
-                                </p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="news-item">
-                        <a href="https://medium.com/@reemomeerakbrand.info/why-you-cant-miss-the-next-nyu-sports-film-festival-a-guide-for-urban-culture-buffs-04f96ec76568" target="_blank" class="news-item-link">
-                            <div class="news-image">
-                                <img src="assets/026_NYUSFF basic screen logo.avif" alt="NYUSFF Logo">
-                            </div>
-                            <div class="news-content">
-                                <h3 class="news-title">Press: Why You Can't Miss the Next NYU Sports Film Festival: A Guide for Urban Culture Buffs</h3>
-                                <p class="news-date">April 27, 2025</p>
-                                <p class="news-excerpt">
-                                    Reemo Meerak's guide to the 2025 festival experience
-                                </p>
-                            </div>
-                        </a>
-                    </article>
+                <div class="substack-carousel-wrapper">
+                    <button class="substack-carousel-arrow substack-arrow-left" aria-label="Previous posts">&#10094;</button>
+                    <div class="substack-carousel-viewport">
+                        <div class="substack-carousel-track" id="substackTrack">
+                            <div class="substack-loading">Loading latest posts...</div>
+                        </div>
+                    </div>
+                    <button class="substack-carousel-arrow substack-arrow-right" aria-label="Next posts">&#10095;</button>
+                </div>
+                <div class="substack-carousel-dots" id="substackDots"></div>
+                <div class="substack-cta">
+                    <a href="https://nyusff.substack.com/" target="_blank" class="substack-follow-btn">Follow us on Substack</a>
                 </div>
             </div>
         </section>
