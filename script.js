@@ -111,16 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 250);
     });
 
-    // Substack RSS Feed Carousel
+    // Substack RSS Feed
     var substackTrack = document.getElementById('substackTrack');
-    var substackDots = document.getElementById('substackDots');
 
     if (substackTrack) {
         var SUBSTACK_FEED_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://nyusff.substack.com/feed';
-        var substackIndex = 0;
-        var substackPerView = 2.5;
-        var substackTotal = 0;
-        var substackGap = 16;
 
         function extractImageFromContent(content) {
             var div = document.createElement('div');
@@ -140,47 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return div.textContent || div.innerText || '';
         }
 
-        function sizeSubstackCards() {
-            var viewport = substackTrack.parentElement;
-            var viewportWidth = viewport.offsetWidth;
-            var cardWidth = (viewportWidth - substackGap * (substackPerView - 1)) / substackPerView;
-            var cards = substackTrack.querySelectorAll('.news-item');
-            cards.forEach(function(card) {
-                card.style.width = cardWidth + 'px';
-                card.style.minWidth = cardWidth + 'px';
-            });
-            return cardWidth;
-        }
-
-        function updateSubstackCarousel() {
-            var cardWidth = sizeSubstackCards();
-            var offset = substackIndex * (cardWidth + substackGap);
-            substackTrack.style.transform = 'translateX(-' + offset + 'px)';
-            updateSubstackDots();
-        }
-
-        function updateSubstackDots() {
-            if (!substackDots) return;
-            substackDots.innerHTML = '';
-            for (var i = 0; i < substackTotal; i++) {
-                var dot = document.createElement('button');
-                var startVisible = substackIndex;
-                var endVisible = substackIndex + substackPerView - 1;
-                var isActive = (i >= startVisible && i <= endVisible);
-                dot.className = 'substack-dot' + (isActive ? ' active' : '');
-                dot.setAttribute('aria-label', 'Go to post ' + (i + 1));
-                (function(idx) {
-                    dot.addEventListener('click', function() {
-                        substackIndex = idx;
-                        var maxIndex = Math.max(0, substackTotal - substackPerView);
-                        if (substackIndex > maxIndex) substackIndex = maxIndex;
-                        updateSubstackCarousel();
-                    });
-                })(i);
-                substackDots.appendChild(dot);
-            }
-        }
-
         fetch(SUBSTACK_FEED_URL)
             .then(function(res) { return res.json(); })
             .then(function(data) {
@@ -190,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 var posts = data.items.slice(0, 10);
-                substackTotal = posts.length;
                 substackTrack.innerHTML = '';
 
                 posts.forEach(function(post) {
@@ -218,43 +171,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     substackTrack.appendChild(article);
                 });
-
-                updateSubstackCarousel();
             })
             .catch(function(err) {
                 console.error('Error loading Substack feed:', err);
                 substackTrack.innerHTML = '<div class="substack-loading">Unable to load posts. Visit <a href="https://nyusff.substack.com/" target="_blank">our Substack</a> directly.</div>';
             });
-
-        var leftArrow = document.querySelector('.substack-arrow-left');
-        var rightArrow = document.querySelector('.substack-arrow-right');
-
-        if (leftArrow) {
-            leftArrow.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                substackIndex--;
-                if (substackIndex < 0) substackIndex = Math.max(0, substackTotal - substackPerView);
-                updateSubstackCarousel();
-            });
-        }
-
-        if (rightArrow) {
-            rightArrow.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                substackIndex++;
-                if (substackIndex > substackTotal - substackPerView) substackIndex = 0;
-                updateSubstackCarousel();
-            });
-        }
-
-        var substackResizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(substackResizeTimer);
-            substackResizeTimer = setTimeout(function() {
-                updateSubstackCarousel();
-            }, 200);
-        });
     }
 });
