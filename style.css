@@ -1015,12 +1015,12 @@ input:focus-visible {
 .substack-carousel-track {
     display: flex;
     transition: transform 0.4s ease;
-    gap: 24px;
+    gap: 16px;
 }
 
 .substack-carousel-track .news-item {
-    min-width: calc(33.333% - 24px * 2 / 3);
     flex-shrink: 0;
+    height: 380px;
 }
 
 .substack-carousel-arrow {
@@ -1045,10 +1045,8 @@ input:focus-visible {
     transform: scale(1.1);
 }
 
-.substack-carousel-arrow:disabled {
-    opacity: 0.3;
-    cursor: default;
-    transform: none;
+.substack-carousel-arrow:active {
+    transform: scale(0.95);
 }
 
 .substack-carousel-dots {
@@ -1120,9 +1118,6 @@ input:focus-visible {
         width: 36px;
         height: 36px;
         font-size: 1rem;
-    }
-    .substack-carousel-track .news-item {
-        min-width: calc(33.333% - 24px * 2 / 3);
     }
 }
 
