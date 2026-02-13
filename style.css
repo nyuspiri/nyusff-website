@@ -1115,20 +1115,14 @@ input:focus-visible {
     object-position: center;
 }
 
-@media (max-width: 1024px) {
-    .substack-carousel-track .news-item {
-        min-width: calc(50% - 24px / 2);
-    }
-}
-
 @media (max-width: 768px) {
-    .substack-carousel-track .news-item {
-        min-width: 100%;
-    }
     .substack-carousel-arrow {
         width: 36px;
         height: 36px;
         font-size: 1rem;
+    }
+    .substack-carousel-track .news-item {
+        min-width: calc(33.333% - 24px * 2 / 3);
     }
 }
 

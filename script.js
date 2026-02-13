@@ -122,8 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let substackTotal = 0;
 
         function getSubstackPerView() {
-            if (window.innerWidth <= 768) return 1;
-            if (window.innerWidth <= 1024) return 2;
             return 3;
         }
 
@@ -230,7 +228,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var rightArrow = document.querySelector('.substack-arrow-right');
 
         if (leftArrow) {
-            leftArrow.addEventListener('click', function() {
+            leftArrow.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 if (substackIndex > 0) {
                     substackIndex--;
                     updateSubstackCarousel();
@@ -239,7 +239,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (rightArrow) {
-            rightArrow.addEventListener('click', function() {
+            rightArrow.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 if (substackIndex < substackTotal - substackPerView) {
                     substackIndex++;
                     updateSubstackCarousel();
