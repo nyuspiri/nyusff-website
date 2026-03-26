@@ -3684,3 +3684,148 @@ input:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== EVENT SCHEDULE PAGE ===== */
+.schedule-page {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.schedule-day {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.schedule-day:last-child {
+    border-bottom: none;
+}
+
+.schedule-day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.schedule-day-date {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b21a8;
+    border-left: 4px solid #6b21a8;
+    padding-left: 0.75rem;
+    white-space: nowrap;
+}
+
+.schedule-day-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+}
+
+.schedule-block {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.schedule-block-highlight {
+    background: #faf5ff;
+    border-color: #d8b4fe;
+}
+
+.schedule-block-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.schedule-block-highlight .schedule-block-header {
+    border-bottom-color: #d8b4fe;
+}
+
+.schedule-block-time {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6b21a8;
+    white-space: nowrap;
+    padding-top: 0.15rem;
+    min-width: 130px;
+}
+
+.schedule-block-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 0.2rem 0;
+    line-height: 1.3;
+}
+
+.schedule-block-venue {
+    font-size: 0.8rem;
+    color: #9333ea;
+    font-weight: 500;
+}
+
+.schedule-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.schedule-items li {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.item-time {
+    color: #6b7280;
+    white-space: nowrap;
+    min-width: 130px;
+    flex-shrink: 0;
+}
+
+.item-desc {
+    color: #374151;
+}
+
+.item-desc em {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .schedule-block-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .schedule-block-time {
+        min-width: unset;
+    }
+    .schedule-items li {
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+    .item-time {
+        min-width: unset;
+        font-size: 0.78rem;
+        color: #9333ea;
+    }
+    .schedule-day-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
