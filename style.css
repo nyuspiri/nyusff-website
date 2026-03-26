@@ -1528,6 +1528,10 @@ input:focus-visible {
     padding: 0 var(--spacing-lg);
 }
 
+.page-hero.thin-hero .container {
+    padding: 0 clamp(160px, 23vw, 410px);
+}
+
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1606,9 +1610,11 @@ input:focus-visible {
     font-family: var(--font-header); /* Apply Oswald font */
 }
 
-/* Larger title for submission page */
+/* Title for thin hero pages */
 .page-hero.thin-hero .page-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    text-align: center;
+    line-height: 1.1;
 }
 
 .hero-text .page-subtitle {
