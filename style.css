@@ -4194,3 +4194,43 @@ input:focus-visible {
         height: 200px;
     }
 }
+
+/* ===== FEATURE FILM POSTER CARDS ===== */
+.feature-films-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-film-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.feature-film-poster {
+    width: 100%;
+    display: block;
+    /* No fixed height — image shows at full natural ratio */
+}
+
+.feature-film-info {
+    padding: 1.25rem 1.5rem;
+}
+
+.feature-film-showtime {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6b21a8;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 640px) {
+    .feature-films-grid {
+        grid-template-columns: 1fr;
+    }
+}
