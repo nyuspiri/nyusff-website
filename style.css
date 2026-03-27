@@ -4234,3 +4234,57 @@ input:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== FEATURE FILM STACKED BANNER LAYOUT ===== */
+.feature-films-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-film-banner-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.feature-film-banner-img {
+    width: 100%;
+    display: block;
+}
+
+.feature-film-banner-info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.feature-film-banner-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+
+.feature-film-banner-text .program-film-meta {
+    margin: 0.25rem 0;
+}
+
+.feature-film-banner-text .program-film-synopsis {
+    margin: 0.5rem 0 0;
+}
+
+.feature-film-banner-info .feature-film-showtime {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .feature-film-banner-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
