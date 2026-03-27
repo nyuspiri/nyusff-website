@@ -3829,3 +3829,117 @@ input:focus-visible {
         gap: 0.25rem;
     }
 }
+
+/* ===== HONOREE PAGE ===== */
+.honoree-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.honoree-profile {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+.honoree-profile-reverse {
+    grid-template-columns: 1fr 300px;
+}
+
+.honoree-profile-reverse .honoree-photo-wrap {
+    order: 2;
+}
+
+.honoree-profile-reverse .honoree-bio {
+    order: 1;
+}
+
+.honoree-photo-wrap {
+    position: sticky;
+    top: 100px;
+}
+
+.honoree-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+    display: block;
+}
+
+.honoree-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #9333ea;
+    margin: 0 0 0.5rem 0;
+}
+
+.honoree-name {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.15;
+}
+
+.honoree-bio p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.honoree-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.honoree-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0 0 4rem 0;
+}
+
+/* Hero two-photo layout */
+.honoree-hero-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.honoree-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .honoree-profile,
+    .honoree-profile-reverse {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .honoree-profile-reverse .honoree-photo-wrap {
+        order: 0;
+    }
+    .honoree-profile-reverse .honoree-bio {
+        order: 1;
+    }
+    .honoree-photo-wrap {
+        position: static;
+    }
+    .honoree-photo {
+        aspect-ratio: 4 / 3;
+    }
+    .honoree-hero-photos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
