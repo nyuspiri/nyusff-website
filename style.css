@@ -4166,3 +4166,31 @@ input:focus-visible {
         display: none;
     }
 }
+
+/* ===== PROGRAM FILM COVER ENTRIES ===== */
+.program-film-entry-cover {
+    padding: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+
+.program-film-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.program-film-entry-cover .program-film-details {
+    padding: 1.25rem 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .program-film-entry-cover {
+        grid-template-columns: 1fr;
+    }
+    .program-film-cover {
+        height: 200px;
+    }
+}
