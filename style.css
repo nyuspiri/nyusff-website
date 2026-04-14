@@ -4373,3 +4373,37 @@ input:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== SPEAKER CARD WITH HEADSHOT ===== */
+.speaker-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.speaker-headshot {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+    border: 3px solid #e5e7eb;
+}
+
+.speaker-card-featured .speaker-headshot {
+    border-color: #7c3aed;
+}
+
+.speaker-card-body {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 480px) {
+    .speaker-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
