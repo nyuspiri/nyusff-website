@@ -4432,3 +4432,20 @@ input:focus-visible {
     color: #6b7280;
     font-size: 0.85rem;
 }
+
+/* ===== PROGRAM JUDGE PHOTO ===== */
+.program-judge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.program-judge-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+    border: 2px solid #e5e7eb;
+}
