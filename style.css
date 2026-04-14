@@ -4407,3 +4407,28 @@ input:focus-visible {
         text-align: center;
     }
 }
+
+/* ===== PROGRAM JUDGES LIST ===== */
+.program-judges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.program-judge {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: baseline;
+}
+
+.program-judge strong {
+    color: #1a1a1a;
+    font-size: 0.92rem;
+}
+
+.program-judge span {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
