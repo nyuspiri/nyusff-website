@@ -8,6 +8,276 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260414">
+    <style>
+        /* ── Festival 2026 Overview Page ── */
+        .f26-hero {
+            background: linear-gradient(135deg, #1a0035 0%, #4a0080 60%, #7b00cc 100%);
+            color: #fff;
+            padding: 5rem 0 0;
+            overflow: hidden;
+        }
+        .f26-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: end;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .f26-hero-text { padding-bottom: 4rem; }
+        .f26-hero-text h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1;
+            text-transform: uppercase;
+            margin: 0 0 1rem;
+        }
+        .f26-hero-date {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.2rem;
+        }
+        .f26-hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.88);
+            max-width: 520px;
+        }
+        .f26-hero-photo {
+            height: 420px;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+            align-self: end;
+        }
+        .f26-hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        /* Quick nav */
+        .f26-nav {
+            background: #111;
+            padding: 1.5rem 2rem;
+        }
+        .f26-nav-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .f26-nav-grid a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .f26-nav-grid a:hover { background: #7b00cc; border-color: #7b00cc; }
+
+        /* Generic section container */
+        .f26-section {
+            padding: 5rem 2rem;
+        }
+        .f26-section.gray { background: #f5f5f5; }
+        .f26-section.dark { background: #111; color: #fff; }
+        .f26-section.purple { background: linear-gradient(135deg, #1a0035, #4a0080); color: #fff; }
+        .f26-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Split layout: text + photo */
+        .f26-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .f26-split.reverse { direction: rtl; }
+        .f26-split.reverse > * { direction: ltr; }
+        .f26-split-photo {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+        .f26-split-photo img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+        .f26-split-text h2 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 1rem;
+        }
+        .f26-split-text h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 1.5rem 0 0.5rem;
+            opacity: 0.6;
+        }
+        .f26-split-text p { line-height: 1.7; margin-bottom: 0.8rem; }
+        .f26-split-text ul { padding-left: 1.2rem; }
+        .f26-split-text ul li { margin-bottom: 0.4rem; line-height: 1.6; }
+
+        /* Section heading */
+        .f26-section-title {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 2.5rem;
+        }
+        .f26-section-title span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            opacity: 0.55;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Photo grid */
+        .f26-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .f26-photo-grid.three { grid-template-columns: repeat(3, 1fr); }
+        .f26-photo-grid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+        .f26-photo-grid .wide {
+            grid-column: span 2;
+        }
+        .f26-photo-grid .wide img { height: 380px; }
+
+        /* Winner callout */
+        .f26-winner-box {
+            background: linear-gradient(135deg, #4a0080, #7b00cc);
+            color: #fff;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin-top: 2rem;
+        }
+        .f26-winner-box .label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 0.4rem;
+        }
+        .f26-winner-box h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 0 0.3rem;
+        }
+        .f26-winner-box p { margin: 0; opacity: 0.88; line-height: 1.5; }
+
+        /* Awards grid */
+        .f26-awards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .f26-award-list h3 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.55;
+            margin: 1.8rem 0 0.6rem;
+        }
+        .f26-award-list h3:first-child { margin-top: 0; }
+        .f26-award-list ul { list-style: none; padding: 0; margin: 0; }
+        .f26-award-list ul li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .f26-award-list ul li:last-child { border-bottom: none; }
+        .f26-award-list strong { display: block; font-weight: 700; }
+        .f26-award-list em { opacity: 0.7; font-style: normal; font-size: 0.85rem; }
+
+        .f26-award-photos { display: flex; flex-direction: column; gap: 1.2rem; }
+        .f26-award-photos img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .f26-photo-caption {
+            font-size: 0.78rem;
+            opacity: 0.5;
+            margin-top: 0.4rem;
+            text-align: center;
+        }
+
+        /* Summary CTA */
+        .f26-cta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .f26-cta {
+            display: inline-block;
+            background: #fff;
+            color: #1a0035;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .f26-cta:hover { opacity: 0.85; }
+        .f26-cta.outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .f26-cta.outline:hover { border-color: #fff; }
+
+        /* Divider line */
+        .f26-divider { border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 0; }
+        .f26-section.dark .f26-divider { border-color: rgba(255,255,255,0.08); }
+
+        @media (max-width: 768px) {
+            .f26-hero-inner { grid-template-columns: 1fr; }
+            .f26-hero-photo { display: none; }
+            .f26-split, .f26-split.reverse { grid-template-columns: 1fr; direction: ltr; }
+            .f26-awards-grid { grid-template-columns: 1fr; }
+            .f26-photo-grid { grid-template-columns: 1fr; }
+            .f26-photo-grid .wide { grid-column: span 1; }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -111,101 +381,102 @@
     <!-- Main Content -->
     <main class="main-content">
 
-        <section class="page-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="page-title">6th Annual NYUSFF</h1>
-                        <p class="page-subtitle">April 17–19, 2026 &nbsp;·&nbsp; Cantor Film Center, New York City</p>
-                        <p class="page-subtitle" style="margin-top:0.5rem;">The 6th Annual NYU Sports Film Festival delivered its most expansive and well-attended program to date — three days of screenings, panels, pitch contests, and live events bringing together industry leaders, student filmmakers, and international guests.</p>
-                    </div>
+        <!-- ── HERO ── -->
+        <section class="f26-hero">
+            <div class="f26-hero-inner">
+                <div class="f26-hero-text">
+                    <h1>6th Annual<br>NYUSFF</h1>
+                    <p class="f26-hero-date">April 17–19, 2026 &nbsp;·&nbsp; Cantor Film Center, NYC</p>
+                    <p class="f26-hero-desc">The 6th Annual NYU Sports Film Festival delivered its most expansive and well-attended program to date — three days of screenings, panels, pitch contests, and live events bringing together industry leaders, student filmmakers, and international guests.</p>
+                </div>
+                <div class="f26-hero-photo">
+                    <img src="assets/festival26_audience.jpg" alt="Packed Opening Night audience at Cantor Film Center">
                 </div>
             </div>
         </section>
 
-        <!-- Quick-nav CTAs -->
-        <section class="ctas-section" style="padding-top:2rem;padding-bottom:2rem;">
-            <div class="container">
-                <div class="ctas-grid">
-                    <div class="cta-item"><a href="program-2026.html" class="cta-link">Full Program</a></div>
-                    <div class="cta-item"><a href="selections-2026.html" class="cta-link">Official Selections</a></div>
-                    <div class="cta-item"><a href="speakers-2026.html" class="cta-link">Speakers</a></div>
-                    <div class="cta-item"><a href="honoree-2026.html" class="cta-link">Honoree</a></div>
-                </div>
+        <!-- ── QUICK NAV ── -->
+        <nav class="f26-nav" aria-label="2026 Festival pages">
+            <div class="f26-nav-grid">
+                <a href="program-2026.html">Full Program</a>
+                <a href="schedule-2026.html">Event Schedule</a>
+                <a href="selections-2026.html">Official Selections</a>
+                <a href="mentions-2026.html">Honorable Mentions</a>
+                <a href="speakers-2026.html">Speakers</a>
+                <a href="honoree-2026.html">Honoree</a>
             </div>
-        </section>
+        </nav>
 
-        <!-- Pitch Contest -->
-        <section class="content-section">
-            <div class="container">
-                <div class="centered-content">
-                    <div class="text-block">
-                        <h2>Opening Event: Pitch Contest</h2>
-                        <p>The festival opened with its flagship Pitch Contest, featuring a panel of high-level industry judges and a live "wild card" round with audience participation.</p>
-
+        <!-- ── PITCH CONTEST ── -->
+        <section class="f26-section">
+            <div class="f26-inner">
+                <div class="f26-split">
+                    <div class="f26-split-text">
+                        <h2>Opening Event:<br>Pitch Contest</h2>
+                        <p>The festival opened with its flagship Pitch Contest — featuring a panel of high-level industry judges, pre-selected finalists, and a live "wild card" round with full audience participation.</p>
                         <h3>Judges</h3>
                         <ul>
                             <li><strong>Jerome Williams</strong> — Former NBA Player, Chairman &amp; CEO of IP FAMBA Inc.</li>
                             <li><strong>Aron Phillips</strong> — Chief Content Consultant, Same Page Entertainment; former COO of SLAM</li>
                             <li><strong>Bryan Terry</strong> — President of Players Studio, PlayersTV</li>
                         </ul>
+                        <div class="f26-winner-box">
+                            <p class="label">Winner</p>
+                            <h3>Jürgen Locadia — Nic Chang</h3>
+                            <p>A feature documentary on Curaçao international footballer Jürgen Locadia, currently playing in the USL in Miami. Winner of the Jury Prize ($500), Audience Award, and Sports Documentary Course Audience Award.</p>
+                        </div>
+                    </div>
+                    <div class="f26-split-photo">
+                        <img src="assets/festival26_pitch_judges.jpg" alt="Pitch Contest judges panel" style="object-position: center 20%;">
+                    </div>
+                </div>
 
-                        <h3>Winner</h3>
-                        <p><strong>Nic Chang — <em>Jürgen Locadia</em></strong><br>
-                        A feature documentary in development on Curaçao international footballer Jürgen Locadia, currently playing in the USL in Miami.</p>
-                        <ul>
-                            <li>Jury Prize — $500</li>
-                            <li>Audience Award</li>
-                            <li>Sports Documentary Course Audience Award</li>
-                        </ul>
+                <!-- Pitch presentation photo -->
+                <div style="margin-top:3rem; border-radius:12px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.15);">
+                    <img src="assets/festival26_pitch_presentation.jpg" alt="Finalist presenting at the Pitch Contest" style="width:100%;height:400px;object-fit:cover;display:block;object-position:center 40%;">
+                </div>
+                <p class="f26-photo-caption" style="margin-top:0.6rem;">A finalist pitches to the judges and audience during the Pitch Contest</p>
+            </div>
+        </section>
+
+        <!-- ── OPENING NIGHT ── -->
+        <section class="f26-section gray">
+            <div class="f26-inner">
+                <h2 class="f26-section-title">
+                    <span>Night 1</span>
+                    Opening Night
+                </h2>
+                <p style="max-width:720px;line-height:1.7;margin-bottom:2rem;">One of the highest-attended events of the weekend, Opening Night featured two major screenings followed by a packed networking reception. <em>Unraveling George</em> (Dir. Mike Tollin) drew notable guests including Walt Frazier, Bill Bradley, and William Wesley. <em>Open Book</em> (Fresh Focus Sports) delivered a powerful Q&amp;A with former coach Emmanuel "Book" Richardson and filmmakers Thanasis Petrakis and Anthony Kuzviwanza.</p>
+
+                <div class="f26-photo-grid">
+                    <div>
+                        <img src="assets/festival26_vips.jpg" alt="Bill Bradley, Mike Tollin, and Walt Frazier at Opening Night" style="height:320px;object-position:center top;">
+                        <p class="f26-photo-caption">Bill Bradley, Mike Tollin &amp; Walt Frazier at the step-and-repeat</p>
+                    </div>
+                    <div>
+                        <img src="assets/festival26_ww.jpg" alt="William Wesley and guest at Opening Night" style="height:320px;object-position:center top;">
+                        <p class="f26-photo-caption">William Wesley at Opening Night</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Opening Night -->
-        <section class="content-section" style="background:#f8f8f8;">
-            <div class="container">
-                <div class="centered-content">
-                    <div class="text-block">
-                        <h2>Opening Night</h2>
-                        <p>Opening Night was one of the highest-attended events of the weekend, featuring two major screenings and a packed networking reception.</p>
-
-                        <h3><em>Unraveling George</em> (Dir. Mike Tollin)</h3>
-                        <p>The untold story of Hall of Fame coach George Raveling — a figure whose influence helped shape basketball's global evolution and the rise of Nike. Notable attendees included:</p>
-                        <ul>
-                            <li>Walt Frazier</li>
-                            <li>Bill Bradley</li>
-                            <li>William Wesley</li>
-                        </ul>
-
-                        <h3><em>Open Book</em> (Fresh Focus Sports)</h3>
-                        <p>A powerful comeback story centered on former coach Emmanuel "Book" Richardson, followed by a highly emotional Q&amp;A with Richardson and filmmakers Thanasis Petrakis and Anthony Kuzviwanza.</p>
-
-                        <p>The evening concluded with a networking reception, reflecting strong turnout and engagement across all attendees.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gersh U Panels -->
-        <section class="content-section">
-            <div class="container">
-                <div class="centered-content">
-                    <div class="text-block">
-                        <h2>Industry Programming: Gersh U Panels</h2>
-                        <p>Saturday programming featured Gersh U — a series of panels with leading voices across sports, media, and culture, highlighting the festival's growing role as a bridge between sports and entertainment industries.</p>
-
+        <!-- ── GERSH U PANELS ── -->
+        <section class="f26-section">
+            <div class="f26-inner">
+                <div class="f26-split reverse">
+                    <div class="f26-split-text">
+                        <h2>Industry Programming:<br>Gersh U Panels</h2>
+                        <p>Saturday programming featured Gersh U — a series of panels with leading voices across sports, media, and culture. The panels drew strong attendance and highlighted the festival's growing role as a bridge between sports and the entertainment industry.</p>
                         <h3>Panelists</h3>
                         <ul>
                             <li><strong>Que Gaskins</strong> — Head of Think450</li>
                             <li><strong>Deirunas Visockas</strong> — EVP, Gersh Sports; NBPA-certified agent</li>
                             <li><strong>Jared Thompson</strong> — VP, Alternative Programming</li>
                             <li><strong>Schuyler Roos</strong></li>
-                            <li><strong>Caleb Miner</strong> — Worked with PUMA, NASCAR, Chris Paul, Carmelo Anthony</li>
-                            <li><strong>Ionie Banner</strong> — Focused on data, equity, and philanthropy</li>
+                            <li><strong>Caleb Miner</strong> — PUMA, NASCAR, Chris Paul, Carmelo Anthony</li>
+                            <li><strong>Ionie Banner</strong> — Data, equity, and philanthropy</li>
                         </ul>
-
                         <h3>Moderators</h3>
                         <ul>
                             <li><strong>Jayson Council</strong> — Head of Culture, Gersh</li>
@@ -213,79 +484,87 @@
                             <li><strong>Raven Vaz</strong></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Film Programming -->
-        <section class="content-section" style="background:#f8f8f8;">
-            <div class="container">
-                <div class="centered-content">
-                    <div class="text-block">
-                        <h2>Film Programming</h2>
-                        <p>Across three nights, the festival showcased a diverse slate of short and feature-length films, each followed by filmmaker Q&amp;As.</p>
-                        <ul>
-                            <li><strong>Opening Night:</strong> Two feature-length screenings — <em>Unraveling George</em> and <em>Open Book</em></li>
-                            <li><strong>Night 2:</strong> 6 short films + filmmaker Q&amp;As</li>
-                            <li><strong>Night 3:</strong> 7 short films + filmmaker Q&amp;As</li>
-                        </ul>
-                        <p>The festival also featured the <strong>Sports Documentary Course Screening</strong>, highlighting work from students in NYU's pioneering course led by Ronnie Kay.</p>
-                        <div style="margin-top:1.5rem;">
-                            <a href="selections-2026.html" class="cta-link">View Official Selections</a>
-                        </div>
+                    <div class="f26-split-photo">
+                        <img src="assets/festival26_gersh_panel.jpg" alt="Gersh U panel at NYU Production Lab" style="object-position:center 30%;height:460px;">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Awards -->
-        <section class="content-section">
-            <div class="container">
-                <div class="centered-content">
-                    <div class="text-block">
-                        <h2>Awards &amp; Recognition</h2>
-                        <p>The festival concluded with a well-attended Awards Ceremony distributing over <strong>$4,000 in prizes</strong>.</p>
+        <!-- ── FILM PROGRAMMING ── -->
+        <section class="f26-section gray">
+            <div class="f26-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+                <div>
+                    <h2 class="f26-section-title" style="margin-bottom:1.5rem;">Film Programming</h2>
+                    <p style="line-height:1.7;margin-bottom:1rem;">Across three nights, the festival showcased a diverse slate of films — each followed by filmmaker Q&amp;As — drawing audiences from across New York and the international film community.</p>
+                    <ul style="line-height:1.8;padding-left:1.2rem;">
+                        <li><strong>Opening Night:</strong> <em>Unraveling George</em> &amp; <em>Open Book</em></li>
+                        <li><strong>Night 2:</strong> 6 short films + filmmaker Q&amp;As</li>
+                        <li><strong>Night 3:</strong> 7 short films + filmmaker Q&amp;As</li>
+                    </ul>
+                    <p style="margin-top:1rem;line-height:1.7;">The festival also featured the <strong>Sports Documentary Course Screening</strong>, highlighting work from students in NYU's pioneering course led by Ronnie Kay.</p>
+                    <div style="margin-top:1.8rem;">
+                        <a href="selections-2026.html" style="display:inline-block;background:#111;color:#fff;font-weight:700;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:4px;text-decoration:none;">View Official Selections</a>
+                    </div>
+                </div>
+                <div style="border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.15);">
+                    <img src="assets/festival26_award_nic.jpg" alt="Nic Chang accepts award at the ceremony" style="width:100%;height:420px;object-fit:cover;display:block;object-position:center 20%;">
+                    <p class="f26-photo-caption" style="padding:0.5rem 1rem 0.8rem;background:#fff;">Nic Chang accepts the Sports Documentary Course Audience Award for <em>Jürgen Locadia</em></p>
+                </div>
+            </div>
+        </section>
 
+        <!-- ── AWARDS ── -->
+        <section class="f26-section dark">
+            <div class="f26-inner">
+                <h2 class="f26-section-title" style="margin-bottom:2.5rem;">
+                    <span>Over $4,000 in Prizes</span>
+                    Awards &amp; Recognition
+                </h2>
+                <div class="f26-awards-grid">
+                    <div class="f26-award-list">
                         <h3>Film Awards</h3>
                         <ul>
-                            <li><strong>Best NYU Documentary</strong> — <em>Hold On</em> (Will Fitzpatrick) — $300</li>
-                            <li><strong>Best Open Documentary</strong> — <em>Shifting Courts</em> (David Fernández Graña) — $300</li>
-                            <li><strong>Best NYU Narrative</strong> — <em>Bleeding Edge</em> (Daeyoung Kim) — $300</li>
-                            <li><strong>Best Open Narrative</strong> — <em>SHOWTIME</em> (Francesco Giardiello) — $300</li>
-                            <li><strong>Audience Award</strong> — <em>Lunch Box</em> (Sean Billings &amp; Romeo Okwara) — $800</li>
-                            <li><strong>Jury Grand Prize</strong> — <em>La Liga</em> (Paul Rosenfeld &amp; MacPherson Christopher) — $1,000</li>
+                            <li><strong>Best NYU Documentary</strong> <em>Hold On — Will Fitzpatrick &nbsp;·&nbsp; $300</em></li>
+                            <li><strong>Best Open Documentary</strong> <em>Shifting Courts — David Fernández Graña &nbsp;·&nbsp; $300</em></li>
+                            <li><strong>Best NYU Narrative</strong> <em>Bleeding Edge — Daeyoung Kim &nbsp;·&nbsp; $300</em></li>
+                            <li><strong>Best Open Narrative</strong> <em>SHOWTIME — Francesco Giardiello &nbsp;·&nbsp; $300</em></li>
+                            <li><strong>Audience Award</strong> <em>Lunch Box — Sean Billings &amp; Romeo Okwara &nbsp;·&nbsp; $800</em></li>
+                            <li><strong>Jury Grand Prize</strong> <em>La Liga — Paul Rosenfeld &amp; MacPherson Christopher &nbsp;·&nbsp; $1,000</em></li>
                         </ul>
-
-                        <h3>Pitch Contest Awards</h3>
+                        <h3>Pitch Contest</h3>
                         <ul>
-                            <li><strong>Jury Prize</strong> — <em>Jürgen Locadia</em> (Nic Chang) — $500</li>
-                            <li><strong>Audience Award</strong> — <em>Jürgen Locadia</em> (Nic Chang)</li>
+                            <li><strong>Jury Prize</strong> <em>Jürgen Locadia — Nic Chang &nbsp;·&nbsp; $500</em></li>
+                            <li><strong>Audience Award</strong> <em>Jürgen Locadia — Nic Chang</em></li>
                         </ul>
-
                         <h3>Additional Recognition</h3>
                         <ul>
-                            <li><strong>SNY Official Selections</strong> — <em>Lunch Box</em>, <em>Spit Out Your Bones</em>, <em>The Itinerant</em> (to be featured in a television special)</li>
-                            <li><strong>Sports Documentary Course Audience Award</strong> — <em>Jürgen Locadia</em> (Nic Chang)</li>
-                            <li><strong>Inaugural Photography Competition Winner</strong> — Nicolás Galvis, <em>Fight Night</em> — $500 prize + MLS media credential opportunity</li>
+                            <li><strong>SNY Official Selections</strong> <em>Lunch Box, Spit Out Your Bones, The Itinerant</em></li>
+                            <li><strong>Photography Competition Winner</strong> <em>Nicolás Galvis, Fight Night &nbsp;·&nbsp; $500 + MLS media credential</em></li>
                         </ul>
+                    </div>
+                    <div class="f26-award-photos">
+                        <div>
+                            <img src="assets/festival26_award_lunchbox.jpg" alt="Sean Billings and Romeo Okwara accept the Audience Award for Lunch Box" style="border-radius:10px;width:100%;height:280px;object-fit:cover;object-position:center top;">
+                            <p class="f26-photo-caption">Sean Billings &amp; Romeo Okwara — Audience Award, <em>Lunch Box</em></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Summary -->
-        <section class="content-section" style="background:#f8f8f8;">
-            <div class="container">
-                <div class="centered-content">
-                    <div class="text-block">
-                        <h2>Looking Back</h2>
-                        <p>With a packed opening night, strong panel attendance, international film participation, and a highly engaged audience throughout the weekend, the 2026 NYU Sports Film Festival marked a significant step forward in both scale and impact. The festival continues to solidify its position as a leading platform for emerging sports storytellers and a growing hub for the intersection of sports, film, and culture.</p>
-                        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-                            <a href="program-2026.html" class="cta-link">Full Program</a>
-                            <a href="selections-2026.html" class="cta-link">Official Selections</a>
-                            <a href="speakers-2026.html" class="cta-link">Speakers</a>
-                        </div>
-                    </div>
+        <!-- ── SUMMARY ── -->
+        <section class="f26-section purple">
+            <div class="f26-inner" style="max-width:760px;">
+                <h2 class="f26-section-title">
+                    <span>Looking Back</span>
+                    A Landmark Year
+                </h2>
+                <p style="font-size:1.1rem;line-height:1.75;color:rgba(255,255,255,0.88);">With a packed opening night, strong panel attendance, international film participation, and a highly engaged audience throughout the weekend, the 2026 NYU Sports Film Festival marked a significant step forward in both scale and impact. The festival continues to solidify its position as a leading platform for emerging sports storytellers and a growing hub for the intersection of sports, film, and culture.</p>
+                <div class="f26-cta-row">
+                    <a href="program-2026.html" class="f26-cta">Full Program</a>
+                    <a href="selections-2026.html" class="f26-cta outline">Official Selections</a>
+                    <a href="speakers-2026.html" class="f26-cta outline">Speakers</a>
                 </div>
             </div>
         </section>
