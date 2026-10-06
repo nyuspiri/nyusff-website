@@ -17,7 +17,7 @@
    14. Honoree
    15. Program
    16. Speakers
-   17. 2026 festival overview
+   17. Festival recap pages (2022–2026)
    18. Accessibility & motion
    ========================================================================== */
 
@@ -665,7 +665,7 @@ button {
 .cta-link,
 .substack-follow-btn,
 .btn-primary-enhanced,
-.f26-cta {
+.recap-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2693,17 +2693,17 @@ section.partners-section {
 }
 
 
-/* 17. 2026 festival overview
+/* 17. Festival recap pages (2022–2026)
    ========================================================================== */
 
-.f26-hero {
+.recap-hero {
     padding: clamp(3rem, 7vw, 5rem) 0 0;
     background: linear-gradient(135deg, var(--purple-950) 0%, #4a0080 60%, #7b00cc 100%);
     color: var(--white);
     overflow: hidden;
 }
 
-.f26-hero-inner {
+.recap-hero-inner {
     display: grid;
     gap: 2rem;
     align-items: end;
@@ -2712,11 +2712,11 @@ section.partners-section {
     padding-inline: var(--gutter);
 }
 
-.f26-hero-text {
+.recap-hero-text {
     padding-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
-.f26-hero-text h1 {
+.recap-hero-text h1 {
     margin-bottom: 1rem;
     font-size: clamp(2.4rem, 6vw, 4.5rem);
     font-weight: 800;
@@ -2725,7 +2725,7 @@ section.partners-section {
     text-transform: uppercase;
 }
 
-.f26-hero-date {
+.recap-hero-date {
     margin-bottom: 1.2rem;
     font-size: 1.05rem;
     font-weight: 600;
@@ -2733,33 +2733,33 @@ section.partners-section {
     color: rgba(255, 255, 255, 0.72);
 }
 
-.f26-hero-desc {
+.recap-hero-desc {
     max-width: 520px;
     font-size: 1.05rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
 }
 
-.f26-hero-photo {
+.recap-hero-photo {
     display: none;
     height: 420px;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
 
-.f26-hero-photo img {
+.recap-hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
 }
 
-.f26-nav {
+.recap-nav {
     padding: 1.25rem 0;
     background: #111111;
 }
 
-.f26-nav-grid {
+.recap-nav-grid {
     display: flex;
     gap: 0.75rem;
     max-width: var(--container);
@@ -2769,11 +2769,11 @@ section.partners-section {
     scrollbar-width: none;
 }
 
-.f26-nav-grid::-webkit-scrollbar {
+.recap-nav-grid::-webkit-scrollbar {
     display: none;
 }
 
-.f26-nav-grid a {
+.recap-nav-grid a {
     flex-shrink: 0;
     padding: 0.6rem 1.2rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -2788,55 +2788,55 @@ section.partners-section {
     transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
-.f26-nav-grid a:hover {
+.recap-nav-grid a:hover {
     background: #7b00cc;
     border-color: #7b00cc;
 }
 
-.f26-section {
+.recap-section {
     padding: var(--section-space) 0;
 }
 
-.f26-section.gray {
+.recap-section.gray {
     background: #f5f5f5;
 }
 
-.f26-section.dark {
+.recap-section.dark {
     background: #111111;
     color: var(--white);
 }
 
-.f26-section.purple {
+.recap-section.purple {
     background: linear-gradient(135deg, var(--purple-950), #4a0080);
     color: var(--white);
 }
 
-.f26-inner {
+.recap-inner {
     max-width: var(--container);
     margin-inline: auto;
     padding-inline: var(--gutter);
 }
 
-.f26-split {
+.recap-split {
     display: grid;
     gap: 2rem;
     align-items: center;
 }
 
-.f26-split-photo {
+.recap-split-photo {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
 }
 
-.f26-split-photo img {
+.recap-split-photo img {
     display: block;
     width: 100%;
     height: clamp(240px, 40vw, 380px);
     object-fit: cover;
 }
 
-.f26-split-text h2 {
+.recap-split-text h2 {
     margin-bottom: 1rem;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     font-weight: 800;
@@ -2844,7 +2844,7 @@ section.partners-section {
     text-transform: uppercase;
 }
 
-.f26-split-text h3 {
+.recap-split-text h3 {
     margin: 1.5rem 0 0.5rem;
     font-size: 0.9rem;
     font-weight: 700;
@@ -2853,21 +2853,21 @@ section.partners-section {
     opacity: 0.6;
 }
 
-.f26-split-text p {
+.recap-split-text p {
     margin-bottom: 0.8rem;
     line-height: 1.7;
 }
 
-.f26-split-text ul {
+.recap-split-text ul {
     padding-left: 1.2rem;
 }
 
-.f26-split-text li {
+.recap-split-text li {
     margin-bottom: 0.4rem;
     line-height: 1.6;
 }
 
-.f26-section-title {
+.recap-section-title {
     margin-bottom: 2rem;
     font-size: clamp(1.6rem, 3vw, 2.4rem);
     font-weight: 800;
@@ -2875,7 +2875,7 @@ section.partners-section {
     text-transform: uppercase;
 }
 
-.f26-section-title span {
+.recap-section-title span {
     display: block;
     margin-bottom: 0.4rem;
     font-size: 0.75rem;
@@ -2884,19 +2884,19 @@ section.partners-section {
     opacity: 0.55;
 }
 
-.f26-intro {
+.recap-intro {
     max-width: 720px;
     margin-bottom: 2rem;
     line-height: 1.7;
 }
 
-.f26-photo-grid {
+.recap-photo-grid {
     display: grid;
     gap: 1.2rem;
     margin: 2rem 0;
 }
 
-.f26-photo-grid img {
+.recap-photo-grid img {
     display: block;
     width: 100%;
     height: clamp(220px, 30vw, 280px);
@@ -2904,25 +2904,25 @@ section.partners-section {
     border-radius: var(--radius);
 }
 
-.f26-photo-grid .wide img {
+.recap-photo-grid .wide img {
     height: clamp(240px, 40vw, 380px);
 }
 
-.f26-wide-photo {
+.recap-wide-photo {
     margin-top: 3rem;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
 }
 
-.f26-wide-photo img {
+.recap-wide-photo img {
     display: block;
     width: 100%;
     height: clamp(240px, 40vw, 420px);
     object-fit: cover;
 }
 
-.f26-winner-box {
+.recap-winner-box {
     margin-top: 2rem;
     padding: clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
     background: linear-gradient(135deg, #4a0080, #7b00cc);
@@ -2930,7 +2930,7 @@ section.partners-section {
     color: var(--white);
 }
 
-.f26-winner-box .label {
+.recap-winner-box .label {
     margin-bottom: 0.4rem;
     font-size: 0.7rem;
     font-weight: 700;
@@ -2939,7 +2939,7 @@ section.partners-section {
     opacity: 0.7;
 }
 
-.f26-winner-box h3 {
+.recap-winner-box h3 {
     margin: 0 0 0.3rem;
     font-size: 1.4rem;
     font-weight: 800;
@@ -2948,19 +2948,23 @@ section.partners-section {
     opacity: 1;
 }
 
-.f26-winner-box p {
+.recap-winner-box p {
     margin: 0;
     line-height: 1.5;
     opacity: 0.9;
 }
 
-.f26-awards-grid {
+.recap-awards-grid {
     display: grid;
     gap: 3rem;
     align-items: start;
 }
 
-.f26-award-list h3 {
+.recap-awards-grid.single {
+    grid-template-columns: minmax(0, 760px);
+}
+
+.recap-award-list h3 {
     margin: 1.8rem 0 0.6rem;
     font-size: 0.75rem;
     font-weight: 700;
@@ -2969,43 +2973,43 @@ section.partners-section {
     opacity: 0.55;
 }
 
-.f26-award-list h3:first-child {
+.recap-award-list h3:first-child {
     margin-top: 0;
 }
 
-.f26-award-list ul {
+.recap-award-list ul {
     list-style: none;
 }
 
-.f26-award-list li {
+.recap-award-list li {
     padding: 0.7rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.95rem;
     line-height: 1.4;
 }
 
-.f26-award-list li:last-child {
+.recap-award-list li:last-child {
     border-bottom: 0;
 }
 
-.f26-award-list strong {
+.recap-award-list strong {
     display: block;
     font-weight: 700;
 }
 
-.f26-award-list em {
+.recap-award-list em {
     font-size: 0.85rem;
     font-style: normal;
     opacity: 0.7;
 }
 
-.f26-award-photos {
+.recap-award-photos {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-.f26-award-photos img {
+.recap-award-photos img {
     display: block;
     width: 100%;
     height: 260px;
@@ -3013,106 +3017,455 @@ section.partners-section {
     border-radius: var(--radius);
 }
 
-.f26-photo-caption {
+.recap-photo-caption {
     margin-top: 0.5rem;
     font-size: 0.78rem;
     text-align: center;
     opacity: 0.6;
 }
 
-.f26-photo-caption-boxed {
+.recap-photo-caption-boxed {
     margin: 0;
     padding: 0.6rem 1rem 0.8rem;
     background: #f5f5f5;
 }
 
-.f26-inner-narrow {
+.recap-inner-narrow {
     max-width: calc(760px + 2 * var(--gutter));
 }
 
-.f26-summary {
+.recap-summary {
     font-size: 1.1rem;
     line-height: 1.75;
     color: rgba(255, 255, 255, 0.88);
 }
 
-.f26-cta-row {
+.recap-cta-row {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
 }
 
-.f26-cta {
+.recap-cta {
     background: var(--white);
     color: var(--purple-950);
 }
 
-.f26-cta:hover {
+.recap-cta:hover {
     background: rgba(255, 255, 255, 0.85);
 }
 
-.f26-cta.outline {
+.recap-cta.outline {
     background: transparent;
     color: var(--white);
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.f26-cta.outline:hover {
+.recap-cta.outline:hover {
     border-color: var(--white);
 }
 
-.f26-cta.dark {
+.recap-cta.dark {
     background: var(--ink);
     color: var(--white);
 }
 
-.f26-cta.dark:hover {
+.recap-cta.dark:hover {
     background: var(--violet);
 }
 
-.f26-divider {
+.recap-divider {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.f26-section.dark .f26-divider {
+.recap-section.dark .recap-divider {
     border-color: rgba(255, 255, 255, 0.08);
 }
 
 @media (min-width: 769px) {
-    .f26-hero-inner {
+    .recap-hero-inner {
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
     }
 
-    .f26-hero-photo {
+    .recap-hero-photo {
         display: block;
     }
 
-    .f26-split {
+    .recap-split {
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
     }
 
-    .f26-split.reverse > :first-child {
+    .recap-split.reverse > :first-child {
         order: 2;
     }
 
-    .f26-photo-grid {
+    .recap-photo-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .f26-photo-grid.three {
+    .recap-photo-grid.three {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .f26-photo-grid .wide {
+    .recap-photo-grid .wide {
         grid-column: span 2;
     }
 
-    .f26-awards-grid {
+    .recap-awards-grid {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+
+/* Shared pieces for the 2022–2025 recap pages */
+.recap-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.75rem;
+    margin-top: 1.75rem;
+}
+
+.recap-facts div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.recap-facts dd {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.recap-facts dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.recap-lead {
+    max-width: 760px;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--body);
+}
+
+.recap-section.dark .recap-lead,
+.recap-section.purple .recap-lead {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Schedule */
+.recap-schedule {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.recap-day {
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.recap-day h3 {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple-700);
+}
+
+.recap-day ul {
+    list-style: none;
+}
+
+.recap-day li {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 0.15rem 1rem;
+    padding: 0.55rem 0;
+    border-top: 1px solid #f3f4f6;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.recap-day li:first-child {
+    border-top: 0;
+}
+
+.recap-day .time {
+    font-weight: 600;
+    color: var(--purple-700);
+    white-space: nowrap;
+}
+
+.recap-day .where {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+@media (min-width: 900px) {
+    .recap-schedule {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .recap-day li {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Films */
+.recap-films {
+    display: grid;
+    gap: 1rem;
+}
+
+.recap-night + .recap-night {
+    margin-top: 2.5rem;
+}
+
+.recap-night-title {
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+    border-left: 4px solid var(--purple-700);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-700);
+}
+
+.film-entry {
+    padding: 1.25rem 1.4rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.film-entry h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.film-entry .film-credit {
+    margin: 0.2rem 0 0.6rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.film-entry p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--body);
+}
+
+.award-tag {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--purple-50);
+    border: 1px solid #e9d5ff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--purple-700);
+}
+
+.recap-film-list {
+    columns: 2 260px;
+    column-gap: 2rem;
+    list-style: none;
+}
+
+.recap-film-list li {
+    break-inside: avoid;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+}
+
+.recap-film-list span {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+@media (min-width: 769px) {
+    .recap-films {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Speakers & honorees */
+.recap-event + .recap-event {
+    margin-top: 3.5rem;
+}
+
+.recap-event-head {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.recap-event-head img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.recap-event-head h3 {
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+}
+
+.recap-event-head .when {
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--purple-700);
+}
+
+.recap-event-head p {
+    line-height: 1.65;
+    color: var(--body);
+}
+
+@media (min-width: 769px) {
+    .recap-event-head {
+        grid-template-columns: 280px 1fr;
+        gap: 2.5rem;
+    }
+}
+
+.recap-people {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    gap: 1rem;
+}
+
+.person-tile {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.person-tile img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.person-tile div {
+    padding: 1rem 1.15rem 1.15rem;
+}
+
+.person-tile h4 {
+    font-size: 1.02rem;
+    font-weight: 700;
+}
+
+.person-tile .role {
+    margin: 0.2rem 0 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--purple-600);
+}
+
+.person-tile p:last-child {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+/* Jury, team & thanks */
+.recap-credits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 2rem;
+}
+
+.recap-credits h3 {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple-700);
+}
+
+.recap-credits ul {
+    list-style: none;
+}
+
+.recap-credits li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.recap-credits li span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* Printed program pages */
+.recap-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 0.5rem var(--gutter) 1.25rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--violet) var(--line);
+}
+
+.recap-gallery a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.recap-gallery img {
+    display: block;
+    width: auto;
+    height: clamp(260px, 40vw, 360px);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s var(--ease);
+}
+
+.recap-gallery a:hover img {
+    transform: translateY(-3px);
+}
+
+.recap-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
 }
 
 
