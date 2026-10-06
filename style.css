@@ -994,9 +994,18 @@ section.partners-section {
     text-align: center;
 }
 
+.slide-eyebrow {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--purple-400);
+}
+
 .slide-title {
     margin-bottom: 1rem;
-    font-size: clamp(2.1rem, 4.6vw, 3.75rem);
+    font-size: clamp(2.1rem, 4.2vw, 3.25rem);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.025em;
@@ -1222,6 +1231,26 @@ section.partners-section {
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 700;
+}
+
+.section-cta {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.text-link {
+    font-weight: 600;
+    color: var(--violet);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.text-link::after {
+    content: ' →';
+}
+
+.text-link:hover {
+    color: var(--purple-600);
 }
 
 /* Latest news (filled in by script.js) */
@@ -1880,6 +1909,74 @@ section.partners-section {
 .btn-primary-enhanced:hover {
     background: transparent;
     color: var(--white);
+}
+
+
+/* 2026 by the numbers */
+.stats-section {
+    padding: var(--section-space) 0;
+    background: #111111;
+    color: var(--white);
+    text-align: center;
+}
+
+.stats-eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--purple-400);
+}
+
+.stats-title {
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    max-width: 1000px;
+    margin-inline: auto;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    padding: clamp(1.25rem, 3vw, 2rem) 1rem;
+    background: #111111;
+}
+
+.stat dd {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--white);
+}
+
+.stat dt {
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 
