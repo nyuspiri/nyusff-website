@@ -1,180 +1,176 @@
+// NYUSFF site scripts: navigation, film card flips, Substack feed.
 
-// Film card flip functionality - only one card flipped at a time
-function flipCard(filmCard) {
-    const poster = filmCard.querySelector('.film-poster');
-    const isCurrentlyFlipped = poster.classList.contains('flipped');
-    
-    // First, close all flipped cards
-    const allFlippedCards = document.querySelectorAll('.film-poster.flipped');
-    allFlippedCards.forEach(card => {
-        card.classList.remove('flipped');
-    });
-    
-    // If the clicked card wasn't already flipped, flip it
-    if (!isCurrentlyFlipped) {
-        poster.classList.add('flipped');
-    }
+const MOBILE_NAV = window.matchMedia('(max-width: 1024px)');
+
+/* ---------- Navigation ---------- */
+
+function setExpanded(button, open) {
+    button.setAttribute('aria-expanded', String(open));
+    button.closest('.nav-dropdown').classList.toggle('open', open);
 }
 
-// Close flipped cards when clicking outside
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.film-card')) {
-        const flippedCards = document.querySelectorAll('.film-poster.flipped');
-        flippedCards.forEach(card => {
-            card.classList.remove('flipped');
+function closeDropdowns(except) {
+    document.querySelectorAll('.dropdown-toggle[aria-expanded="true"], .submenu-toggle[aria-expanded="true"]')
+        .forEach(btn => {
+            if (except && btn.closest('.nav-dropdown').contains(except)) return;
+            setExpanded(btn, false);
         });
-    }
-});
+}
 
-// Mobile menu toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Toggle main mobile menu
-    if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-        });
+function initNavigation() {
+    const header = document.querySelector('.site-header');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.getElementById('site-menu');
+    if (!header || !toggle || !menu) return;
+
+    function setMenu(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menu.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+        if (!open) closeDropdowns();
     }
-    
-    // Handle dropdown toggles on mobile
-    function handleMobileDropdowns() {
-        const dropdowns = document.querySelectorAll('.nav-dropdown');
-        
-        dropdowns.forEach(dropdown => {
-            const trigger = dropdown.querySelector(':scope > .nav-link, :scope > a');
-            
-            if (trigger) {
-                // Clone the trigger to remove old event listeners
-                const newTrigger = trigger.cloneNode(true);
-                trigger.parentNode.replaceChild(newTrigger, trigger);
-                
-                newTrigger.addEventListener('click', function(e) {
-                    // Only handle as dropdown on mobile (screen width <= 1024px)
-                    if (window.innerWidth <= 1024) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        // Close other dropdowns at the same level
-                        const siblings = dropdown.parentElement.querySelectorAll(':scope > .nav-dropdown');
-                        siblings.forEach(sibling => {
-                            if (sibling !== dropdown) {
-                                sibling.classList.remove('mobile-open');
-                            }
-                        });
-                        
-                        // Toggle this dropdown
-                        dropdown.classList.toggle('mobile-open');
-                    }
-                });
-            }
-        });
-    }
-    
-    // Initialize mobile dropdown handlers
-    handleMobileDropdowns();
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (navMenu && !navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-                
-                // Close all open dropdowns
-                const openDropdowns = document.querySelectorAll('.nav-dropdown.mobile-open');
-                openDropdowns.forEach(dropdown => {
-                    dropdown.classList.remove('mobile-open');
-                });
-            }
-        }
-    });
-    
-    // Re-initialize dropdown handlers on window resize
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            // Close mobile menu and dropdowns if switching to desktop
-            if (window.innerWidth > 1024) {
-                if (navMenu) navMenu.classList.remove('active');
-                if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-                
-                const openDropdowns = document.querySelectorAll('.nav-dropdown.mobile-open');
-                openDropdowns.forEach(dropdown => {
-                    dropdown.classList.remove('mobile-open');
-                });
-            }
-        }, 250);
+
+    toggle.addEventListener('click', () => {
+        setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    // Substack RSS Feed
-    var substackTrack = document.getElementById('substackTrack');
+    // Top-level dropdowns (About, Events, TV Specials) and nested year submenus
+    header.querySelectorAll('.dropdown-toggle, .submenu-toggle').forEach(btn => {
+        btn.addEventListener('click', event => {
+            event.stopPropagation();
+            // On desktop the menu is already open from hovering, so a click keeps it open
+            const hovered = !MOBILE_NAV.matches && btn.closest('.nav-dropdown').matches(':hover');
+            const open = hovered || btn.getAttribute('aria-expanded') !== 'true';
+            closeDropdowns(btn);
+            setExpanded(btn, open);
+        });
+    });
 
-    if (substackTrack) {
-        var SUBSTACK_FEED_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://nyusff.substack.com/feed';
+    // Desktop: open on hover too, so the menus feel the same as before
+    header.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        const btn = dropdown.querySelector(':scope > .dropdown-toggle, :scope > .nested-row > .submenu-toggle');
+        if (!btn) return;
+        dropdown.addEventListener('mouseenter', () => { if (!MOBILE_NAV.matches) setExpanded(btn, true); });
+        dropdown.addEventListener('mouseleave', () => { if (!MOBILE_NAV.matches) setExpanded(btn, false); });
+    });
 
-        function extractImageFromContent(content) {
-            var div = document.createElement('div');
-            div.innerHTML = content;
-            var img = div.querySelector('img');
-            return img ? img.src : null;
+    document.addEventListener('click', event => {
+        if (!header.contains(event.target)) {
+            closeDropdowns();
+            setMenu(false);
         }
+    });
 
-        function formatDate(dateStr) {
-            var date = new Date(dateStr);
-            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        const wasOpen = toggle.getAttribute('aria-expanded') === 'true';
+        closeDropdowns();
+        setMenu(false);
+        if (wasOpen) toggle.focus();
+    });
+
+    // Leaving the mobile layout resets everything
+    MOBILE_NAV.addEventListener('change', () => setMenu(false));
+
+    // Header shadow once the page scrolls
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 4);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
+
+/* ---------- Film cards (homepage) ---------- */
+
+function flipCard(filmCard) {
+    const poster = filmCard.querySelector('.film-poster');
+    const wasFlipped = poster.classList.contains('flipped');
+    document.querySelectorAll('.film-poster.flipped').forEach(p => p.classList.remove('flipped'));
+    if (!wasFlipped) poster.classList.add('flipped');
+}
+
+function initFilmCards() {
+    document.querySelectorAll('.film-poster').forEach(poster => {
+        poster.setAttribute('role', 'button');
+        poster.setAttribute('tabindex', '0');
+        const title = poster.parentElement.querySelector('.film-title');
+        if (title) poster.setAttribute('aria-label', `Show logline for ${title.textContent.trim()}`);
+        poster.addEventListener('click', () => flipCard(poster.parentElement));
+        poster.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                flipCard(poster.parentElement);
+            }
+        });
+    });
+
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.film-card')) {
+            document.querySelectorAll('.film-poster.flipped').forEach(p => p.classList.remove('flipped'));
         }
+    });
+}
 
-        function stripHtml(html) {
-            var div = document.createElement('div');
-            div.innerHTML = html;
-            return div.textContent || div.innerText || '';
-        }
+/* ---------- Substack feed (homepage) ---------- */
 
-        fetch(SUBSTACK_FEED_URL)
-            .then(function(res) { return res.json(); })
-            .then(function(data) {
-                if (data.status !== 'ok' || !data.items || data.items.length === 0) {
-                    substackTrack.innerHTML = '<div class="substack-loading">No posts found.</div>';
-                    return;
-                }
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
 
-                var posts = data.items.slice(0, 10);
-                substackTrack.innerHTML = '';
+function stripHtml(html) {
+    return new DOMParser().parseFromString(html, 'text/html').body.textContent || '';
+}
 
-                posts.forEach(function(post) {
-                    var imgSrc = post.thumbnail || extractImageFromContent(post.content);
-                    var excerpt = stripHtml(post.description).substring(0, 150);
-                    if (stripHtml(post.description).length > 150) excerpt += '...';
+function firstImage(html) {
+    const img = new DOMParser().parseFromString(html, 'text/html').querySelector('img');
+    return img ? img.getAttribute('src') : null;
+}
 
-                    var article = document.createElement('article');
-                    article.className = 'news-item';
+function initSubstackFeed() {
+    const track = document.getElementById('substackTrack');
+    if (!track) return;
 
-                    var imageHtml = '';
-                    if (imgSrc) {
-                        imageHtml = '<div class="news-image"><img src="' + imgSrc + '" alt="' + post.title.replace(/"/g, '&quot;') + '" class="substack-post-thumbnail"></div>';
-                    } else {
-                        imageHtml = '<div class="news-image"><div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--color-nyu-purple), var(--color-nyu-violet));color:white;font-family:var(--font-header);font-size:1.2rem;padding:20px;text-align:center;">' + post.title + '</div></div>';
-                    }
+    const FEED_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://nyusff.substack.com/feed';
 
-                    article.innerHTML = '<a href="' + post.link + '" target="_blank" class="news-item-link">' +
-                        imageHtml +
-                        '<div class="news-content">' +
-                        '<h3 class="news-title">' + post.title + '</h3>' +
-                        '<p class="news-date">' + formatDate(post.pubDate) + '</p>' +
-                        '<p class="news-excerpt">' + excerpt + '</p>' +
-                        '</div></a>';
+    fetch(FEED_URL)
+        .then(res => res.json())
+        .then(data => {
+            if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+                track.innerHTML = '<div class="substack-loading">No posts found.</div>';
+                return;
+            }
 
-                    substackTrack.appendChild(article);
+            track.innerHTML = data.items.slice(0, 10).map(post => {
+                const title = escapeHtml(post.title);
+                const imgSrc = post.thumbnail || firstImage(post.content);
+                const text = stripHtml(post.description);
+                const excerpt = escapeHtml(text.length > 150 ? text.slice(0, 150).trim() + '…' : text);
+                const date = new Date(post.pubDate).toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
                 });
-            })
-            .catch(function(err) {
-                console.error('Error loading Substack feed:', err);
-                substackTrack.innerHTML = '<div class="substack-loading">Unable to load posts. Visit <a href="https://nyusff.substack.com/" target="_blank">our Substack</a> directly.</div>';
-            });
-    }
-});
+                const image = imgSrc
+                    ? `<img src="${escapeHtml(imgSrc)}" alt="" class="substack-post-thumbnail" loading="lazy">`
+                    : `<div class="news-image-fallback">${title}</div>`;
+
+                return `<article class="news-item">
+                    <a href="${escapeHtml(post.link)}" target="_blank" rel="noopener" class="news-item-link">
+                        <div class="news-image">${image}</div>
+                        <div class="news-content">
+                            <h3 class="news-title">${title}</h3>
+                            <p class="news-date">${date}</p>
+                            <p class="news-excerpt">${excerpt}</p>
+                        </div>
+                    </a>
+                </article>`;
+            }).join('');
+        })
+        .catch(err => {
+            console.error('Error loading Substack feed:', err);
+            track.innerHTML = '<div class="substack-loading">Unable to load posts. Visit <a href="https://nyusff.substack.com/" target="_blank" rel="noopener">our Substack</a> directly.</div>';
+        });
+}
+
+initNavigation();
+initFilmCards();
+initSubstackFeed();
