@@ -10,7 +10,7 @@ function setExpanded(button, open) {
 }
 
 function closeDropdowns(except) {
-    document.querySelectorAll('.dropdown-toggle[aria-expanded="true"], .submenu-toggle[aria-expanded="true"]')
+    document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]')
         .forEach(btn => {
             if (except && btn.closest('.nav-dropdown').contains(except)) return;
             setExpanded(btn, false);
@@ -35,8 +35,8 @@ function initNavigation() {
         setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    // Top-level dropdowns (About, Events, TV Specials) and nested year submenus
-    header.querySelectorAll('.dropdown-toggle, .submenu-toggle').forEach(btn => {
+    // Dropdowns (About, Past Festivals, TV Specials)
+    header.querySelectorAll('.dropdown-toggle').forEach(btn => {
         btn.addEventListener('click', event => {
             event.stopPropagation();
             // On desktop the menu is already open from hovering, so a click keeps it open
@@ -49,7 +49,7 @@ function initNavigation() {
 
     // Desktop: open on hover too, so the menus feel the same as before
     header.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-        const btn = dropdown.querySelector(':scope > .dropdown-toggle, :scope > .nested-row > .submenu-toggle');
+        const btn = dropdown.querySelector(':scope > .dropdown-toggle');
         if (!btn) return;
         dropdown.addEventListener('mouseenter', () => { if (!MOBILE_NAV.matches) setExpanded(btn, true); });
         dropdown.addEventListener('mouseleave', () => { if (!MOBILE_NAV.matches) setExpanded(btn, false); });
@@ -77,6 +77,25 @@ function initNavigation() {
     const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 4);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+}
+
+/* ---------- TV special videos ---------- */
+
+// Show a thumbnail first and only load the YouTube player when someone presses play
+function initVideos() {
+    document.querySelectorAll('.video-container[data-youtube]').forEach(container => {
+        const button = container.querySelector('.video-play');
+        if (!button) return;
+        button.addEventListener('click', () => {
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube-nocookie.com/embed/${container.dataset.youtube}?autoplay=1&rel=0`;
+            iframe.title = button.getAttribute('aria-label').replace(/^Play the /, '');
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            container.replaceChildren(iframe);
+            iframe.focus();
+        });
+    });
 }
 
 /* ---------- Film cards (homepage) ---------- */
@@ -172,5 +191,6 @@ function initSubstackFeed() {
 }
 
 initNavigation();
+initVideos();
 initFilmCards();
 initSubstackFeed();
